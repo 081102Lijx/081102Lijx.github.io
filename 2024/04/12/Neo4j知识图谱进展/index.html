@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta name="keywords" content="hexo, autumn" />
+    <title>
+        Xu an&#39;s Web
+    </title>
+    <!-- favicon -->
+    
+    <link rel="icon" href="https://cdn.jsdelivr.net/gh/frontendsophie/hexo-theme-autumn@1.0.0/source/img/favicon.ico" />
+     
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- highlight -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.12.0/styles/github-gist.min.css" />
+    <script src="//cdn.bootcss.com/highlight.js/9.2.0/highlight.min.js"></script>
+    <script>
+        hljs.initHighlightingOnLoad()
+    </script>
+    <script src="https://cdn.jsdelivr.net/gh/frontendsophie/hexo-infinite-scroll@2.0.0/dist/main.js"></script>
+
+    <script>
+        infiniteScroll()
+
+        window.addEventListener('DOMContentLoaded', function () {
+            const [
+                mainTitle,
+                mobileMenu,
+                mobileMainTitle,
+                mobileMenuBtn,
+                ipadMenuBtn,
+                aside,
+                closeBtn,
+            ] = getEle(
+                '#main-title',
+                '.mobile-menu',
+                '.mobile-menu h3',
+                '.mobile-menu button',
+                '.ipad-menu',
+                'aside',
+                'aside .close',
+            )
+            const io = new IntersectionObserver(entries => {
+                if (entries[0].intersectionRatio <= 0) {
+                    mobileMainTitle.classList.remove('invisibile')
+                } else {
+                    mobileMainTitle.classList.add('invisibile')
+                }
+            })
+            io.observe(mainTitle)
+
+            clickToggleAside(mobileMenuBtn)
+            clickToggleAside(ipadMenuBtn)
+            clickToggleAside(closeBtn, false)
+
+            const isMenuVisible = window.getComputedStyle(mobileMenu).display !== 'none'
+            if (isMenuVisible) document.body.style.background = 'none'
+
+            function getEle(...args) {
+                return args.map(arg => document.querySelector(arg))
+            }
+
+            function clickToggleAside(btn, show = true) {
+                btn.addEventListener('click', function () {
+                    if (show) {
+                        aside.style.display = 'block'
+                    } else {
+                        aside.style.display = 'none'
+                    }
+                })
+            }
+        })
+    </script>
+
+
+<meta name="generator" content="Hexo 7.1.1"></head>
+
+<body style="background: url(https://cdn.jsdelivr.net/gh/frontendsophie/hexo-theme-autumn@1.0.0/source/img/button-bg.png) #f3f3f3">
+    <div class="container">
+        <header class="header">
+    <nav class="mobile-menu" style="background: url(https://cdn.jsdelivr.net/gh/frontendsophie/hexo-theme-autumn@1.0.0/source/img/button-bg.png) #f3f3f3">
+        <h3 class="invisibile">
+            <a href="/" class="logo">
+                Xu an&#39;s Web
+            </a>
+        </h3>
+        <button class="menu">menu</button>
+    </nav>
+
+    <button class="ipad-menu menu">menu</button>
+
+    <h1 class="title" id="main-title">
+        <a href="/" class="logo">
+            Xu an&#39;s Web
+        </a>
+    </h1>
+    <h2 class="desc">
+        
+    </h2>
+
+    <div class="links">
+        <ul>
+            
+            <li>
+                <a target="_blank" rel="noopener" href="https://github.com/FrontendSophie">
+                    Github
+                </a>
+            </li>
+            
+            <li>
+                <a target="_blank" rel="noopener" href="https://www.linkedin.com/in/frontendsophie/">
+                    LinkedIn
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</header>
+        <main class="main">
+            <article class="post">
+    
+    
+    
+    <h2 class="post-title">
+        Neo4j知识图谱进展
+    </h2>
+    <ul class="post-date">
+        <li>
+            2024-04-12
+        </li>
+        <li>
+            Lijx
+        </li>
+    </ul>
+    <div class="post-content">
+        <h1 id="1-目标任务"><a class="markdownIt-Anchor" href="#1-目标任务"></a> 1、目标任务</h1>
+<p>完成有100个节点的知识图谱绘制</p>
+<h1 id="2-选题"><a class="markdownIt-Anchor" href="#2-选题"></a> 2、选题</h1>
+<p>考研数学知识点</p>
+<h1 id="3-进度"><a class="markdownIt-Anchor" href="#3-进度"></a> 3、进度</h1>
+<p>61个节点</p>
+<h1 id="4-tips"><a class="markdownIt-Anchor" href="#4-tips"></a> 4、tips</h1>
+<h2 id="41-可以使用python进行批量节点关系绘制还未细究已更新"><a class="markdownIt-Anchor" href="#41-可以使用python进行批量节点关系绘制还未细究已更新"></a> 4.1、可以使用python进行批量节点关系绘制（还未细究）（已更新）</h2>
+<p>可以细究为利用导入数据，编程等方法批量导入生成数据，减少建立节点的工作量和错误率。
+在仔细阅读教程后发现，使用python只是因为使用者对python足够熟悉，并且python有插件可以支持neo4j的知识图谱的搭建，批量导入并不是一定需要python。</p>
+<h2 id="42-在绘制节点时要注意不要出现同名节点"><a class="markdownIt-Anchor" href="#42-在绘制节点时要注意不要出现同名节点"></a> 4.2、在绘制节点时要注意不要出现同名节点</h2>
+<p>目前发现在第三章和第四章有同名的节点，导致直接生成了一个横跨两个章节的关系，并且由于Neo4j的自增设置，无法在原节点上更改关系，于是出现了节点和关系的冗余。</p>
+<p>收尾时要记得删除多余关系。</p>
+<h2 id="43-手动输入的缺点"><a class="markdownIt-Anchor" href="#43-手动输入的缺点"></a> 4.3、手动输入的缺点</h2>
+<p>适合数量较少的情况，数量超过30个很容易搞混。</p>
+<h1 id="5-目标进度"><a class="markdownIt-Anchor" href="#5-目标进度"></a> 5、目标进度</h1>
+<p>周内基本完成绘制。</p>
+<hr />
+<p>更新于2024/4/13</p>
+<h1 id="-完成知识图谱绘制"><a class="markdownIt-Anchor" href="#-完成知识图谱绘制"></a> --完成知识图谱绘制</h1>
+<h2 id="-问题"><a class="markdownIt-Anchor" href="#-问题"></a> --问题</h2>
+<p>在绘制时出现了同名节点，关系变得很乱，手动删除又十分麻烦（生气</p>
+<hr />
+<p>更新于2024/4/14</p>
+<h1 id="neo4j本身的发掘"><a class="markdownIt-Anchor" href="#neo4j本身的发掘"></a> neo4j本身的发掘</h1>
+<p>在查找neo4j操作时，找到了官网上的操作指南。事实上，在绘制过程中用到的过程不及其功能的百分之一。固然人工或半人工的构建模式是它最大的短板，它本身的功能和用途也不应该因为这个缺点而被忽视。</p>
+<h1 id="知识图谱的发掘"><a class="markdownIt-Anchor" href="#知识图谱的发掘"></a> 知识图谱的发掘</h1>
+<p>在查找最新的知识图谱的相关文献时，发现知识图谱因为它的直观的特点，在近一个月就有不同领域的对知识图谱的应用技术的开发，包括但不限于趋势预测，风险分析，安全决策，资源配置等，甚至看到了水电站发电量的优化处理。可见目前所看到的优化理论知识只是优化算法的冰山一角，刘攀的观点没有问题，但水文这座陈旧的大厦依然需要CS来注入足够新鲜的血液。</p>
+<hr />
+<p>OVER</p>
+
+    </div>
+</article>
+        </main>
+        <aside class="aside">
+            <div class="close"></div>
+            <section class="aside-section">
+                
+    <h1>Categories</h1>
+
+    
+
+            </section>
+            <section class="aside-section">
+                
+    <h1>Archives</h1>
+
+    <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/">2024</a></li></ul>
+
+
+            </section>
+            <section class="aside-section tag">
+                
+    <h1>Tags</h1>
+
+    <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A/" rel="tag">实验报告</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E5%8F%8C/" rel="tag">计双</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9F%A5%E8%AF%86%E5%A4%A7%E6%9D%82%E7%83%A9/" rel="tag">计算机知识大杂烩</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%BE%E8%AE%BE%E3%80%81%E6%B0%B4%E7%94%B5%E7%AB%99/" rel="tag">课设、水电站</a></li></ul>
+
+            </section>
+        </aside>
+    </div>
+</body>
+
+</html>
