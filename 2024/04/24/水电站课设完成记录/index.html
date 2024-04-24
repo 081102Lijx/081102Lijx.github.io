@@ -132,7 +132,7 @@
     </h2>
     <ul class="post-date">
         <li>
-            2024-04-23
+            2024-04-24
         </li>
         <li>
             Lijx
@@ -140,7 +140,7 @@
     </ul>
     <div class="post-content">
         <h1 id="任务开展三峡水库中长期调度研究"><a class="markdownIt-Anchor" href="#任务开展三峡水库中长期调度研究"></a> 任务：开展三峡水库中长期调度研究</h1>
-<h1 id="任务要求"><a class="markdownIt-Anchor" href="#任务要求"></a> 任务要求</h1>
+<h1 id="任务要求414"><a class="markdownIt-Anchor" href="#任务要求414"></a> 任务要求(4.14)</h1>
 <h3 id="进行水库长系列常规调度模拟计算常规非优化"><a class="markdownIt-Anchor" href="#进行水库长系列常规调度模拟计算常规非优化"></a> 进行水库长系列常规调度模拟计算（常规，非优化）</h3>
 <ul>
 <li>一般采用常规调度图作为调度依据。</li>
@@ -164,7 +164,7 @@
 <li>idea：根据95%的设计保证率进行年平均流量排频处理，输入P-Ⅲ型曲线代码得到相近年份，对照调度图进行常规调度模拟。</li>
 </ul>
 <hr />
-<h2 id="使用方法参照"><a class="markdownIt-Anchor" href="#使用方法参照"></a> 使用方法（参照）</h2>
+<h2 id="使用方法参照415"><a class="markdownIt-Anchor" href="#使用方法参照415"></a> 使用方法（参照）(4.15)</h2>
 <ul>
 <li>经验适线法</li>
 <li>点绘样本经验点据</li>
@@ -197,7 +197,7 @@
 <h2 id="明日任务"><a class="markdownIt-Anchor" href="#明日任务"></a> 明日任务</h2>
 <p>完成程序的基本调试。</p>
 <hr />
-<h2 id="单时段常规调度程序"><a class="markdownIt-Anchor" href="#单时段常规调度程序"></a> 单时段常规调度程序</h2>
+<h2 id="单时段常规调度程序416"><a class="markdownIt-Anchor" href="#单时段常规调度程序416"></a> 单时段常规调度程序(4.16)</h2>
 <p>目前已经完成常规调度基本程序，需要进一步导入整个表格实现计算。以下为单个时段计算程序。</p>
 <p>思路存在问题：试算的结果无法进行及时的更新，无法确定具体的值。故不应将N设为试算结果评判标准，或应设置适当的Q的自增值。</p>
 <ul>
@@ -217,7 +217,7 @@
 <h2 id="明日任务-2"><a class="markdownIt-Anchor" href="#明日任务-2"></a> 明日任务</h2>
 <p>完善程序细节，尽量解决上述问题。</p>
 <hr />
-<h2 id="任务一终稿有问题"><a class="markdownIt-Anchor" href="#任务一终稿有问题"></a> 任务一终稿（有问题）</h2>
+<h2 id="任务一终稿有问题417"><a class="markdownIt-Anchor" href="#任务一终稿有问题417"></a> 任务一终稿（有问题）(4.17)</h2>
 <p>最终联动程序设计思路：</p>
 <ul>
 <li>根据已得出的时段初水位读出当前时段发电量；</li>
@@ -247,7 +247,7 @@
 <h2 id="明日任务-3"><a class="markdownIt-Anchor" href="#明日任务-3"></a> 明日任务</h2>
 <p>优化处理任务一程序，完善功能。</p>
 <hr />
-<h2 id="课后新思路"><a class="markdownIt-Anchor" href="#课后新思路"></a> 课后新思路</h2>
+<h2 id="课后新思路419"><a class="markdownIt-Anchor" href="#课后新思路419"></a> 课后新思路(4.19)</h2>
 <ul>
 <li>155m为非汛期最低水位，即真正的死水位，故在枯水期调度时水位不能低于155；</li>
 <li>可以考虑对每一时段进行以电定水试算（查阅水文水利计算课本）</li>
@@ -265,14 +265,14 @@
 <h2 id="明日任务-4"><a class="markdownIt-Anchor" href="#明日任务-4"></a> 明日任务</h2>
 <p>解决函数逻辑问题。</p>
 <hr />
-<p>今日无具体推进。</p>
+<p>今日无具体推进。(4.20)</p>
 <p>上课间隙简单跑了一下昨天最后的思路，发现一开始就出现了问题，因为水头本身很低，所以最后循环出来的时段末水位甚至成为了负值，这就导致以电定水的循环无法结束，故回到最初的思路，即在计算完出力后在循环内立即计算时段末水位，若不低于145，则继续迭代流量值，若低于145，则转为来多少发多少，计算结束后直接退出循环。</p>
 <p>这里也是上文所述的出现了循环嵌套的问题，今天所产生的新思路为，将正常插值计算时段末水位和来多少发多少计算时段末水位<em><strong>分开成两个函数进行使用</strong></em>，在出现水位过低的情况时，调用后者，并在计算完成后直接退出循环。</p>
 <p>仍需实践探索。</p>
 <h2 id="明日任务-5"><a class="markdownIt-Anchor" href="#明日任务-5"></a> 明日任务</h2>
 <p>争取改善时段循环的关键代码。</p>
 <hr />
-<p>正式完成水电站常规调度。最终代码如下：</p>
+<p>正式完成水电站常规调度。最终代码如下：(4.22)</p>
 <details>
 <summary>代码四</summary>
 <p>主程序代码：</p>
@@ -300,7 +300,8 @@
 <h2 id="明日任务-6"><a class="markdownIt-Anchor" href="#明日任务-6"></a> 明日任务</h2>
 <p>初步寻找所使用的优化调度方法和方程建立思路。</p>
 <hr />
-<p>上午上课发现之前计算的初始水位选的有点太低，所以回来又改了一下常规调度的代码，矫正了一些参数的输出，变动不大，就不放出来了。</p>
+<p>(4.23)
+上午上课发现之前计算的初始水位选的有点太低，所以回来又改了一下常规调度的代码，矫正了一些参数的输出，变动不大，就不放出来了。</p>
 <p>晚上在查找优化调度使用的方法，在多约束又多阶段的情况下，决定使用微分动态规划进行优化计算。需要具体学习一下微分动态规划的理论和建立方程的方法，作为明天的任务。</p>
 <p>查到有关微分动态规划理论的网址如下：</p>
 <ul>
@@ -308,12 +309,14 @@
 <li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/629149697">https://zhuanlan.zhihu.com/p/629149697</a></li>
 </ul>
 <hr />
-<p>昨晚观察表格发现后三个月来水并不少，所以决定今天首先把时段末水位重新蓄回正常蓄水位，水位蓄高之后发电量与之前相比也大了很多。修改的主程序代码如下，其余功能函数没有发生改变：</p>
+<p>(4.24)
+昨晚观察表格发现后三个月来水并不少，所以决定今天首先把时段末水位重新蓄回正常蓄水位，水位蓄高之后发电量与之前相比也大了很多。修改的主程序代码如下，其余功能函数没有发生改变：</p>
 <details>
 <summary>代码五</summary>
 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"><span class="comment">%%前24旬调度计算</span></span><br><span class="line"><span class="keyword">for</span> <span class="built_in">j</span> = <span class="number">1</span>:<span class="number">24</span></span><br><span class="line"></span><br><span class="line">hc = jieguo(<span class="built_in">j</span>,<span class="number">4</span>);</span><br><span class="line">jieguo(<span class="built_in">j</span>,<span class="number">7</span>) = NFun(hc,<span class="built_in">j</span>);</span><br><span class="line">Nsj = jieguo(<span class="built_in">j</span>,<span class="number">7</span>);</span><br><span class="line"></span><br><span class="line">Q = <span class="number">3000</span>;</span><br><span class="line">N = <span class="number">0</span>;</span><br><span class="line">f = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">while</span> <span class="built_in">abs</span>(N - Nsj) &gt;= <span class="number">0.001</span> &amp;&amp; f == <span class="number">0</span></span><br><span class="line"><span class="comment">%%插值下游水位流量曲线</span></span><br><span class="line">Q = Q + <span class="number">0.01</span>;</span><br><span class="line">[jieguo(<span class="built_in">j</span>,<span class="number">6</span>),jieguo(<span class="built_in">j</span>,<span class="number">5</span>),N,f] = Nqfun(Q,hc,jieguo(<span class="built_in">j</span>,<span class="number">2</span>),jieguo(<span class="built_in">j</span>,<span class="number">3</span>));<span class="comment">%试算找出最合适的值</span></span><br><span class="line"><span class="keyword">if</span> f == <span class="number">1</span></span><br><span class="line">    jieguo(<span class="built_in">j</span>,<span class="number">7</span>) = N;</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="comment">%%计算出库流量、出库水量、时段末库容</span></span><br><span class="line"><span class="comment">%计算时段末库容</span></span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span> = <span class="number">1</span>:<span class="number">55</span></span><br><span class="line">    <span class="keyword">if</span> jieguo(<span class="built_in">j</span>,<span class="number">5</span>) &gt;= ZV(<span class="built_in">i</span>,<span class="number">1</span>) &amp;&amp; jieguo(<span class="built_in">j</span>,<span class="number">5</span>) &lt;= ZV(<span class="built_in">i</span>+<span class="number">1</span>,<span class="number">1</span>)</span><br><span class="line">        V = ((ZV(<span class="built_in">i</span>+<span class="number">1</span>,<span class="number">2</span>)-ZV(<span class="built_in">i</span>,<span class="number">2</span>))/(ZV(<span class="built_in">i</span>+<span class="number">1</span>,<span class="number">1</span>)-ZV(<span class="built_in">i</span>,<span class="number">1</span>)))*(jieguo(<span class="built_in">j</span>,<span class="number">5</span>)-ZV(<span class="built_in">i</span>,<span class="number">1</span>))+ZV(<span class="built_in">i</span>,<span class="number">2</span>);</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="comment">%计算出库水量、出库流量</span></span><br><span class="line">jieguo(<span class="built_in">j</span>,<span class="number">12</span>)= V;</span><br><span class="line">jieguo(<span class="built_in">j</span>,<span class="number">11</span>)= jieguo(<span class="built_in">j</span>,<span class="number">2</span>)+jieguo(<span class="built_in">j</span>,<span class="number">3</span>)-V;</span><br><span class="line">jieguo(<span class="built_in">j</span>,<span class="number">10</span>) = jieguo(<span class="built_in">j</span>,<span class="number">11</span>)*<span class="number">100000000</span>/(<span class="number">10</span>*<span class="number">24</span>*<span class="number">3600</span>);</span><br><span class="line"></span><br><span class="line">jieguo(<span class="built_in">j</span>,<span class="number">8</span>) = jieguo(<span class="built_in">j</span>,<span class="number">7</span>)*<span class="number">10</span>*<span class="number">24</span>/<span class="number">10000</span>;</span><br><span class="line">jieguo(<span class="built_in">j</span>+<span class="number">1</span>,<span class="number">3</span>) = jieguo(<span class="built_in">j</span>,<span class="number">12</span>);</span><br><span class="line">jieguo(<span class="built_in">j</span>+<span class="number">1</span>,<span class="number">4</span>) = jieguo(<span class="built_in">j</span>,<span class="number">5</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="comment">%%后12旬（蓄水至175）</span></span><br><span class="line">jieguo(<span class="number">36</span>,<span class="number">12</span>) = <span class="number">0</span>;</span><br><span class="line">Q = <span class="number">3000</span>;</span><br><span class="line"><span class="keyword">while</span> <span class="built_in">abs</span>(<span class="number">393</span>-jieguo(<span class="number">36</span>,<span class="number">12</span>))&gt;<span class="number">0.01</span></span><br><span class="line">Q = Q+<span class="number">0.01</span>;</span><br><span class="line"><span class="keyword">for</span> <span class="built_in">j</span> = <span class="number">25</span>:<span class="number">36</span></span><br><span class="line"></span><br><span class="line">hc = jieguo(<span class="built_in">j</span>,<span class="number">4</span>);</span><br><span class="line"><span class="comment">%&#123;</span></span><br><span class="line"><span class="comment">jieguo(j,7) = NFun(hc,j);</span></span><br><span class="line"><span class="comment">Nsj = jieguo(j,7);</span></span><br><span class="line"><span class="comment">%&#125;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line">[jieguo(<span class="built_in">j</span>,<span class="number">6</span>),jieguo(<span class="built_in">j</span>,<span class="number">5</span>),jieguo(<span class="built_in">j</span>,<span class="number">7</span>),f] = Nqfun(Q,hc,jieguo(<span class="built_in">j</span>,<span class="number">2</span>),jieguo(<span class="built_in">j</span>,<span class="number">3</span>));<span class="comment">%试算找出最合适的值</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> f == <span class="number">1</span></span><br><span class="line">    jieguo(<span class="built_in">j</span>,<span class="number">7</span>) = N;</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="comment">%&#125;</span></span><br><span class="line"><span class="comment">%%计算出库流量、出库水量、时段末库容</span></span><br><span class="line"><span class="comment">%计算时段末库容</span></span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span> = <span class="number">1</span>:<span class="number">55</span></span><br><span class="line">    <span class="keyword">if</span> jieguo(<span class="built_in">j</span>,<span class="number">5</span>) &gt;= ZV(<span class="built_in">i</span>,<span class="number">1</span>) &amp;&amp; jieguo(<span class="built_in">j</span>,<span class="number">5</span>) &lt;= ZV(<span class="built_in">i</span>+<span class="number">1</span>,<span class="number">1</span>)</span><br><span class="line">        V = ((ZV(<span class="built_in">i</span>+<span class="number">1</span>,<span class="number">2</span>)-ZV(<span class="built_in">i</span>,<span class="number">2</span>))/(ZV(<span class="built_in">i</span>+<span class="number">1</span>,<span class="number">1</span>)-ZV(<span class="built_in">i</span>,<span class="number">1</span>)))*(jieguo(<span class="built_in">j</span>,<span class="number">5</span>)-ZV(<span class="built_in">i</span>,<span class="number">1</span>))+ZV(<span class="built_in">i</span>,<span class="number">2</span>);</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="comment">%计算出库水量、出库流量</span></span><br><span class="line">jieguo(<span class="built_in">j</span>,<span class="number">12</span>)= V;</span><br><span class="line">jieguo(<span class="built_in">j</span>,<span class="number">11</span>)= jieguo(<span class="built_in">j</span>,<span class="number">2</span>)+jieguo(<span class="built_in">j</span>,<span class="number">3</span>)-V;</span><br><span class="line">jieguo(<span class="built_in">j</span>,<span class="number">10</span>) = jieguo(<span class="built_in">j</span>,<span class="number">11</span>)*<span class="number">100000000</span>/(<span class="number">10</span>*<span class="number">24</span>*<span class="number">3600</span>);</span><br><span class="line"></span><br><span class="line">jieguo(<span class="built_in">j</span>,<span class="number">8</span>) = jieguo(<span class="built_in">j</span>,<span class="number">7</span>)*<span class="number">10</span>*<span class="number">24</span>/<span class="number">10000</span>;</span><br><span class="line">jieguo(<span class="built_in">j</span>+<span class="number">1</span>,<span class="number">3</span>) = jieguo(<span class="built_in">j</span>,<span class="number">12</span>);</span><br><span class="line">jieguo(<span class="built_in">j</span>+<span class="number">1</span>,<span class="number">4</span>) = jieguo(<span class="built_in">j</span>,<span class="number">5</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">yyaxis left</span><br><span class="line"><span class="built_in">plot</span>(<span class="number">1</span>:<span class="number">36</span>,jieguo(<span class="number">1</span>:<span class="number">36</span>,<span class="number">5</span>));</span><br><span class="line">xlim([<span class="number">1</span> <span class="number">36</span>]);</span><br><span class="line">ylim([<span class="number">145</span>,<span class="number">185</span>]);</span><br><span class="line"></span><br><span class="line"><span class="built_in">hold</span> on</span><br><span class="line">yyaxis right</span><br><span class="line"><span class="built_in">plot</span>(<span class="number">1</span>:<span class="number">36</span>,jieguo(<span class="number">1</span>:<span class="number">36</span>,<span class="number">10</span>));</span><br><span class="line">xlim([<span class="number">1</span>,<span class="number">36</span>]);</span><br><span class="line"><span class="comment">%&#125;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 </detials>
-<p>首先尝试使用最基本的动态规划解决问题。</p>
+<h2 id="明日任务-7"><a class="markdownIt-Anchor" href="#明日任务-7"></a> 明日任务</h2>
+<p>首先尝试使用最基本的动态规划解决问题。先建立好动态规划方程并设置计算的数据结构。</p>
 
     </div>
 </article>
