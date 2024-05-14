@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta name="keywords" content="hexo, autumn" />
+    <title>
+        Xu an&#39;s Web
+    </title>
+    <!-- favicon -->
+    
+    <link rel="icon" href="https://cdn.jsdelivr.net/gh/frontendsophie/hexo-theme-autumn@1.0.0/source/img/favicon.ico" />
+     
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- highlight -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.12.0/styles/github-gist.min.css" />
+    <script src="//cdn.bootcss.com/highlight.js/9.2.0/highlight.min.js"></script>
+    <script>
+        hljs.initHighlightingOnLoad()
+    </script>
+    <script src="https://cdn.jsdelivr.net/gh/frontendsophie/hexo-infinite-scroll@2.0.0/dist/main.js"></script>
+
+    <script>
+        infiniteScroll()
+
+        window.addEventListener('DOMContentLoaded', function () {
+            const [
+                mainTitle,
+                mobileMenu,
+                mobileMainTitle,
+                mobileMenuBtn,
+                ipadMenuBtn,
+                aside,
+                closeBtn,
+            ] = getEle(
+                '#main-title',
+                '.mobile-menu',
+                '.mobile-menu h3',
+                '.mobile-menu button',
+                '.ipad-menu',
+                'aside',
+                'aside .close',
+            )
+            const io = new IntersectionObserver(entries => {
+                if (entries[0].intersectionRatio <= 0) {
+                    mobileMainTitle.classList.remove('invisibile')
+                } else {
+                    mobileMainTitle.classList.add('invisibile')
+                }
+            })
+            io.observe(mainTitle)
+
+            clickToggleAside(mobileMenuBtn)
+            clickToggleAside(ipadMenuBtn)
+            clickToggleAside(closeBtn, false)
+
+            const isMenuVisible = window.getComputedStyle(mobileMenu).display !== 'none'
+            if (isMenuVisible) document.body.style.background = 'none'
+
+            function getEle(...args) {
+                return args.map(arg => document.querySelector(arg))
+            }
+
+            function clickToggleAside(btn, show = true) {
+                btn.addEventListener('click', function () {
+                    if (show) {
+                        aside.style.display = 'block'
+                    } else {
+                        aside.style.display = 'none'
+                    }
+                })
+            }
+        })
+    </script>
+
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+    
+<meta name="generator" content="Hexo 7.1.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+<body style="background: url(https://cdn.jsdelivr.net/gh/frontendsophie/hexo-theme-autumn@1.0.0/source/img/button-bg.png) #f3f3f3">
+    <div class="container">
+        <header class="header">
+    <nav class="mobile-menu" style="background: url(https://cdn.jsdelivr.net/gh/frontendsophie/hexo-theme-autumn@1.0.0/source/img/button-bg.png) #f3f3f3">
+        <h3 class="invisibile">
+            <a href="/" class="logo">
+                Xu an&#39;s Web
+            </a>
+        </h3>
+        <button class="menu">menu</button>
+    </nav>
+
+    <button class="ipad-menu menu">menu</button>
+
+    <h1 class="title" id="main-title">
+        <a href="/" class="logo">
+            Xu an&#39;s Web
+        </a>
+    </h1>
+    <h2 class="desc">
+        
+    </h2>
+
+    <div class="links">
+        <ul>
+            
+            <li>
+                <a target="_blank" rel="noopener" href="https://github.com/081102Lijx">
+                    Github
+                </a>
+            </li>
+            
+            <li>
+                <a href="/null">
+                    LinkedIn
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</header>
+        <main class="main">
+            <article class="post">
+    
+    
+    
+    <h2 class="post-title">
+        DP问题练习
+    </h2>
+    <ul class="post-date">
+        <li>
+            2024-05-14
+        </li>
+        <li>
+            Lijx
+        </li>
+    </ul>
+    <div class="post-content">
+        <h2 id="day1"><a class="markdownIt-Anchor" href="#day1"></a> Day1</h2>
+<p>You are given an integer array cost where cost[i] is the cost of i^{th}  step on a staircase. Once you pay the cost, you can either climb one or two steps.</p>
+<p>You can either start from the step with index 0, or the step with index 1.</p>
+<p>Return the minimum cost to reach the top of the floor.</p>
+<details>
+<summary>result</summary>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">minCostClimbingStairs</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; cost)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> n = cost.<span class="built_in">size</span>();</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt;<span class="built_in">dp</span>(n + <span class="number">1</span>); <span class="comment">//建立数组</span></span><br><span class="line">        dp[<span class="number">0</span>] = dp[<span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">2</span>; i&lt;=n; i++)&#123;</span><br><span class="line">            dp[i] = <span class="built_in">min</span>(dp[i <span class="number">-1</span>] + cost[i<span class="number">-1</span>],dp[i <span class="number">-2</span>] + cost[i - <span class="number">2</span>]); <span class="comment">//递推方程</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dp[n];</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+</details>
+<h3 id="point"><a class="markdownIt-Anchor" href="#point"></a> POINT</h3>
+<p>在本题中使用到了动态规划的思想，首先建立逆序方程，从终点开始为第一时段，则该时段所花费的最小代价即为上一时段下一个台阶或下两个台阶所花费代价的最小值。</p>
+<h3 id="新知识"><a class="markdownIt-Anchor" href="#新知识"></a> 新知识</h3>
+<p><a target="_blank" rel="noopener" href="https://www.runoob.com/cplusplus/cpp-vector.html">cpp vector容器</a></p>
+<p>重点：vector容器使用场景：</p>
+<ul>
+<li>当你需要一个可以动态增长和缩小的数组时。</li>
+<li>当你需要频繁地在序列的末尾添加或移除元素时。</li>
+<li>当你需要一个可以高效随机访问元素的容器时。</li>
+</ul>
+<p>现阶段动态规划和智能算法可以考虑以vector作为主要数据结构。</p>
+<h4 id="vector完整实例"><a class="markdownIt-Anchor" href="#vector完整实例"></a> vector完整实例</h4>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line"><span class="comment">//创建一个空的整数向量</span></span><br><span class="line">std::vector&lt;<span class="type">int</span>&gt; myVector;</span><br><span class="line"></span><br><span class="line"><span class="comment">//添加元素到向量中</span></span><br><span class="line">myVector.<span class="built_in">push_back</span>(<span class="number">3</span>);</span><br><span class="line">myVector.<span class="built_in">push_back</span>(<span class="number">7</span>);</span><br><span class="line">myVector.<span class="built_in">push_back</span>(<span class="number">11</span>);</span><br><span class="line">myVector.<span class="built_in">push_back</span>(<span class="number">5</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//访问向量中的第一个元素并输出</span></span><br><span class="line">std:: cout &lt;&lt; <span class="string">&quot;First element:&quot;</span> &lt;&lt; myVector[<span class="number">0</span>] &lt;&lt;std::endl;</span><br><span class="line"></span><br><span class="line"><span class="comment">//访问向量中的第二个元素并输出</span></span><br><span class="line">std::cout&lt;&lt; <span class="string">&quot;Second element:&quot;</span> &lt;&lt; myVector.<span class="built_in">at</span>(<span class="number">1</span>) &lt;&lt;std::endl;</span><br><span class="line"></span><br><span class="line"><span class="comment">//获取向量的大小并输出</span></span><br><span class="line">std::cout &lt;&lt; <span class="string">&quot;Size of the vector:&quot;</span> &lt;&lt; myVector.<span class="built_in">size</span>() &lt;&lt; std::endl;</span><br><span class="line"></span><br><span class="line"><span class="comment">//删除向量中的第三个元素</span></span><br><span class="line">myVector.<span class="built_in">erease</span>(myVector.<span class="built_in">begin</span>() + <span class="number">2</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//输出删除元素后的向量</span></span><br><span class="line">std::cout&lt;&lt;<span class="string">&quot;Elements in the vector after earasing:&quot;</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> element : myVector)&#123;</span><br><span class="line">std::cout &lt;&lt; element &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line">std::cout &lt;&lt; std::endl;</span><br><span class="line"></span><br><span class="line"><span class="comment">//清空向量并输出</span></span><br><span class="line">myVector.<span class="built_in">clear</span>();</span><br><span class="line">std::cout &lt;&lt; <span class="string">&quot; Size of the vector after clearing:&quot;</span> &lt;&lt;myVector.<span class="built_in">size</span>() &lt;&lt;std::endl;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+    </div>
+</article>
+        </main>
+        <aside class="aside">
+            <div class="close"></div>
+            <section class="aside-section">
+                
+    <h1>Categories</h1>
+
+    
+
+            </section>
+            <section class="aside-section">
+                
+    <h1>Archives</h1>
+
+    <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/">2024</a></li></ul>
+
+
+            </section>
+            <section class="aside-section tag">
+                
+    <h1>Tags</h1>
+
+    <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%94%BE%E5%81%87/" rel="tag">放假</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%80%83%E8%AF%95/" rel="tag">考试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E5%8F%8C/" rel="tag">计双</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9F%A5%E8%AF%86%E5%A4%A7%E6%9D%82%E7%83%A9/" rel="tag">计算机知识大杂烩</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%BE%E8%AE%BE%E3%80%81%E6%B0%B4%E7%94%B5%E7%AB%99/" rel="tag">课设、水电站</a></li></ul>
+
+            </section>
+        </aside>
+    </div>
+</body>
+
+</html>
