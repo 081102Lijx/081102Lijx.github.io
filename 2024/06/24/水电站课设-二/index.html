@@ -27,13 +27,11 @@
 <meta property="og:site_name" content="Xu an&#39;s Web">
 <meta property="og:description" content="2024.6.23 好久不见。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/images/youhuadiaodu.png">
 <meta property="article:published_time" content="2024-06-24T09:08:04.000Z">
-<meta property="article:modified_time" content="2024-06-25T13:47:53.296Z">
+<meta property="article:modified_time" content="2024-06-25T13:59:59.774Z">
 <meta property="article:author" content="Lijx">
 <meta property="article:tag" content="课设">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/images/youhuadiaodu.png">
 
 <link rel="canonical" href="http://example.com/2024/06/24/%E6%B0%B4%E7%94%B5%E7%AB%99%E8%AF%BE%E8%AE%BE-%E4%BA%8C/">
 
@@ -185,7 +183,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-06-25 21:47:53" itemprop="dateModified" datetime="2024-06-25T21:47:53+08:00">2024-06-25</time>
+                <time title="修改时间：2024-06-25 21:59:59" itemprop="dateModified" datetime="2024-06-25T21:59:59+08:00">2024-06-25</time>
               </span>
 
           
@@ -248,13 +246,146 @@
 <p>现附所有动态规划代码如下：</p>
 <details>
 <summary>代码二</summary>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%%水库优化调度代码（第二版）</span></span><br><span class="line"><span class="comment">%确定初始值及数据结构</span></span><br><span class="line">n = <span class="number">36</span>;<span class="comment">%计算时段数</span></span><br><span class="line">Vmin = <span class="number">171.5</span>;</span><br><span class="line">Vmax = <span class="number">505</span>;</span><br><span class="line">Z = <span class="built_in">zeros</span>(<span class="number">36</span>,<span class="number">1000</span>);</span><br><span class="line">V = <span class="built_in">zeros</span>(<span class="number">36</span>,<span class="number">1000</span>);</span><br><span class="line">V(<span class="number">36</span>,:) = <span class="number">377.45</span>;</span><br><span class="line">V(<span class="number">1</span>,:) = <span class="number">377.45</span>;</span><br><span class="line">Z(<span class="number">1</span>,:) = <span class="number">175</span>;</span><br><span class="line">Z(<span class="number">36</span>,:) = <span class="number">175</span>;<span class="comment">%计算初始水位</span></span><br><span class="line">Pb = <span class="number">499</span>;<span class="comment">%保证出力</span></span><br><span class="line">P = <span class="built_in">zeros</span>(<span class="number">36</span>,<span class="number">1000</span>);</span><br><span class="line">SumP = <span class="number">0</span>;</span><br><span class="line">T = <span class="number">10</span>*<span class="number">3600</span>*<span class="number">24</span>/<span class="number">100000000</span>;<span class="comment">%各时段时间间隔</span></span><br><span class="line"></span><br><span class="line"><span class="comment">%设决策变量为下泄流量Qfd(t,1),可能出现弃水Qqs(t,1)</span></span><br><span class="line"><span class="comment">%生态流量限制</span></span><br><span class="line">Qst = <span class="number">5690</span>;<span class="comment">%本次计算为5690</span></span><br><span class="line"></span><br><span class="line"><span class="comment">%%单时段离散化与平均出力的计算方法</span></span><br><span class="line"><span class="comment">%将一时段的状态V(t)离散为M个数值</span></span><br><span class="line"><span class="comment">%又水库水位限制为(145,185)</span></span><br><span class="line"><span class="comment">%故首先选择将水库库容离散为40个数值（即一米一个库容）</span></span><br><span class="line"><span class="comment">%又首先需要确定Qfd的离散值</span></span><br><span class="line"><span class="comment">%故制作Qfd初始值表格</span></span><br><span class="line"><span class="comment">%表格范围设置为（生态流量，时段最大下泄流量）</span></span><br><span class="line"><span class="comment">%此次计算设Qfd为决策变量</span></span><br><span class="line">b = <span class="built_in">linspace</span>(<span class="number">0</span>,<span class="number">1</span>,<span class="number">100</span>);</span><br><span class="line"><span class="comment">%b = 0.8;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> k = <span class="number">1</span>:<span class="number">1000</span></span><br><span class="line">flag = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> <span class="built_in">j</span> = <span class="number">1</span>:<span class="number">35</span></span><br><span class="line"></span><br><span class="line">t = n-<span class="built_in">j</span>;</span><br><span class="line"><span class="comment">%</span></span><br><span class="line"><span class="keyword">if</span> t == <span class="number">1</span></span><br><span class="line">    <span class="built_in">i</span> = <span class="number">1</span>;</span><br><span class="line">    Qxx(t,<span class="built_in">i</span>) = <span class="built_in">abs</span>(Qrk(t,<span class="number">1</span>) - (V(t+<span class="number">1</span>,<span class="number">1</span>) - V(t,<span class="number">1</span>))/T);</span><br><span class="line">     <span class="comment">%库容曲线约束</span></span><br><span class="line">     Z(t,<span class="built_in">i</span>) = Kurqx(V(t,<span class="built_in">i</span>));<span class="comment">%当前时段末库容</span></span><br><span class="line">     <span class="comment">%发电水头约束</span></span><br><span class="line">     [H(t+<span class="number">1</span>,<span class="built_in">i</span>),kcl(t,<span class="built_in">i</span>)] = head(Qxx(t,<span class="built_in">i</span>),Z(t,<span class="built_in">i</span>));<span class="comment">%输入下泄流量及上游水头</span></span><br><span class="line">     <span class="comment">%时段平均出力</span></span><br><span class="line">     P(t+<span class="number">1</span>,:) = kcl(t,<span class="built_in">i</span>)*Qxx(t,<span class="built_in">i</span>)*H(t,<span class="built_in">i</span>)/<span class="number">10000</span>;</span><br><span class="line">     Pmax(t+<span class="number">1</span>,<span class="built_in">i</span>) = P(t+<span class="number">1</span>,<span class="built_in">i</span>);</span><br><span class="line">     h(t+<span class="number">1</span>,<span class="built_in">i</span>) = H(t+<span class="number">1</span>,<span class="built_in">i</span>);</span><br><span class="line">     <span class="keyword">break</span>;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line"><span class="comment">%&#125;</span></span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span> = <span class="number">1</span>:<span class="number">1000</span></span><br><span class="line"><span class="comment">%水电站最大过流能力限制</span></span><br><span class="line">    xxnl(t) = Xiaxnl(Z(t+<span class="number">1</span>,<span class="built_in">i</span>));<span class="comment">%输入当前上游水位,计算当前时段水库最大下泄能力</span></span><br><span class="line">    Qfd = <span class="built_in">linspace</span>(Qst,xxnl(t),<span class="number">1000</span>);<span class="comment">%Qfd初始数组，共1000个数据点</span></span><br><span class="line">    </span><br><span class="line">            V(t,<span class="built_in">i</span>) = V(t+<span class="number">1</span>,<span class="built_in">i</span>) - (Qrk(t+<span class="number">1</span>,<span class="number">1</span>)-Qfd(<span class="built_in">i</span>))*T;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> V(t,<span class="built_in">i</span>) &lt; Vmin</span><br><span class="line">                V(t,<span class="built_in">i</span>) = Vmin;</span><br><span class="line">                Qxx(t+<span class="number">1</span>,<span class="built_in">i</span>) = <span class="built_in">abs</span>(Qrk(t+<span class="number">1</span>,<span class="number">1</span>) - (V(t+<span class="number">1</span>) - V(t))/T);</span><br><span class="line">    </span><br><span class="line">            <span class="comment">%库容曲线约束</span></span><br><span class="line">            Z(t,<span class="built_in">i</span>) = Kurqx(V(t,<span class="built_in">i</span>));<span class="comment">%当前时段末库容</span></span><br><span class="line">            <span class="comment">%发电水头约束</span></span><br><span class="line">            [H(t+<span class="number">1</span>,<span class="built_in">i</span>),kcl(t+<span class="number">1</span>,<span class="built_in">i</span>)] = head(Qxx(t+<span class="number">1</span>,<span class="built_in">i</span>),Z(t,<span class="built_in">i</span>));<span class="comment">%输入下泄流量及上游水头</span></span><br><span class="line">            <span class="keyword">if</span> H(t+<span class="number">1</span>,<span class="built_in">i</span>) &lt; <span class="number">0</span></span><br><span class="line">                <span class="keyword">continue</span>;<span class="comment">%继续i循环</span></span><br><span class="line">            <span class="keyword">end</span></span><br><span class="line">            <span class="comment">%时段平均出力</span></span><br><span class="line">            P(t+<span class="number">1</span>,<span class="built_in">i</span>) = kcl(t+<span class="number">1</span>,<span class="built_in">i</span>)*Qxx(t+<span class="number">1</span>,<span class="built_in">i</span>)*H(t+<span class="number">1</span>,<span class="built_in">i</span>)/<span class="number">10000</span>;</span><br><span class="line">            <span class="comment">%水电站预想出力限制</span></span><br><span class="line">            yxcl(t+<span class="number">1</span>,<span class="built_in">i</span>) = Yuxcl(H(t+<span class="number">1</span>,<span class="built_in">i</span>));<span class="comment">%输入当前水头</span></span><br><span class="line">    </span><br><span class="line">            <span class="keyword">continue</span>;<span class="comment">%跳出i循环</span></span><br><span class="line">    </span><br><span class="line">            <span class="keyword">elseif</span> V(t,<span class="built_in">i</span>) &gt; Vmax</span><br><span class="line">                Qqs(t+<span class="number">1</span>,<span class="built_in">i</span>) = (V(t,<span class="built_in">i</span>)-Vmax)/T;</span><br><span class="line">                V(t,<span class="built_in">i</span>) = Vmax;</span><br><span class="line">                Qxx(t+<span class="number">1</span>,<span class="built_in">i</span>) = <span class="built_in">abs</span>(Qrk(t+<span class="number">1</span>,<span class="number">1</span>) - (V(t,<span class="built_in">i</span>) - V(t+<span class="number">1</span>,<span class="built_in">i</span>))/T);</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                Qxx(t+<span class="number">1</span>,<span class="built_in">i</span>) = Qfd(<span class="built_in">i</span>);</span><br><span class="line">            <span class="keyword">end</span></span><br><span class="line">           </span><br><span class="line">            <span class="comment">%库容曲线约束</span></span><br><span class="line">            Z(t,<span class="built_in">i</span>) = Kurqx(V(t,<span class="built_in">i</span>));<span class="comment">%当前时段末库容</span></span><br><span class="line">            <span class="comment">%发电水头约束</span></span><br><span class="line">            [H(t+<span class="number">1</span>,<span class="built_in">i</span>),kcl(t+<span class="number">1</span>,<span class="built_in">i</span>)] = head(Qxx(t+<span class="number">1</span>,<span class="built_in">i</span>),Z(t,<span class="built_in">i</span>));<span class="comment">%输入下泄流量及上游水头</span></span><br><span class="line">            <span class="comment">%时段平均出力</span></span><br><span class="line">            <span class="keyword">if</span> H(t+<span class="number">1</span>,<span class="built_in">i</span>) &lt; <span class="number">0</span></span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            <span class="keyword">end</span></span><br><span class="line">            P(t+<span class="number">1</span>,<span class="built_in">i</span>) = kcl(t+<span class="number">1</span>,<span class="built_in">i</span>)*Qxx(t+<span class="number">1</span>,<span class="built_in">i</span>)*H(t+<span class="number">1</span>,<span class="built_in">i</span>)/<span class="number">10000</span>;</span><br><span class="line">            <span class="comment">%水电站预想出力限制</span></span><br><span class="line">            yxcl(t+<span class="number">1</span>,<span class="built_in">i</span>) = Yuxcl(H(t+<span class="number">1</span>,<span class="built_in">i</span>));<span class="comment">%输入当前水头</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">            <span class="comment">%%指标函数</span></span><br><span class="line">            <span class="comment">%</span></span><br><span class="line">            <span class="keyword">if</span> P(t,<span class="built_in">i</span>) &gt; yxcl(t)</span><br><span class="line">                P(t,<span class="built_in">i</span>) = yxcl(t);</span><br><span class="line">                <span class="comment">%flag(t) = 1;</span></span><br><span class="line">            <span class="comment">%&#125;</span></span><br><span class="line">            <span class="keyword">elseif</span> P(t+<span class="number">1</span>,<span class="built_in">i</span>) &gt; Pb &amp;&amp; P(t,<span class="built_in">i</span>) &lt; yxcl(t)</span><br><span class="line">                P(t+<span class="number">1</span>,<span class="built_in">i</span>) = P(t+<span class="number">1</span>,<span class="built_in">i</span>);</span><br><span class="line">                <span class="comment">%flag(t) = 1;</span></span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                P(t+<span class="number">1</span>,<span class="built_in">i</span>) = P(t+<span class="number">1</span>,<span class="built_in">i</span>) + b(<span class="number">1</span>,k)*(P(t+<span class="number">1</span>,<span class="built_in">i</span>)-Pb);<span class="comment">%b为惩罚系数</span></span><br><span class="line">            <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="comment">%</span></span><br><span class="line"><span class="keyword">for</span> f = <span class="number">1</span>:<span class="number">999</span></span><br><span class="line">    <span class="keyword">if</span> P(t+<span class="number">1</span>,f) &gt; P(t+<span class="number">1</span>,f+<span class="number">1</span>)</span><br><span class="line">        Ppro(t+<span class="number">1</span>,f) = P(t+<span class="number">1</span>,f);   </span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">[Pmax(t+<span class="number">1</span>,<span class="number">1</span>),l] = <span class="built_in">max</span>(Ppro(t+<span class="number">1</span>,<span class="number">1</span>:<span class="number">200</span>));</span><br><span class="line">V(t,:) = V(t,l);</span><br><span class="line">Z(t,:) = Z(t,l);</span><br><span class="line">Q(t+<span class="number">1</span>,<span class="number">1</span>) = Qxx(t+<span class="number">1</span>,l);</span><br><span class="line">qs(t+<span class="number">1</span>,<span class="number">1</span>) = Qqs(t+<span class="number">1</span>,l);</span><br><span class="line">h(t+<span class="number">1</span>,<span class="number">1</span>) = H(t+<span class="number">1</span>,l);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> m = <span class="number">1</span>:<span class="number">36</span></span><br><span class="line"><span class="keyword">if</span> Pmax(m,<span class="number">1</span>) &gt; Pb</span><br><span class="line">    flag = flag+<span class="number">1</span>;</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">per(k,<span class="number">1</span>) = flag/<span class="number">36</span>;</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
-</details>
-<p>做出图像如下：</p>
-<p><img src="/images/youhuadiaodu.png" alt="优化调度图像" /></p>
-<h2 id="明日任务-2"><a class="markdownIt-Anchor" href="#明日任务-2"></a> 明日任务</h2>
-<p>读文献，基本得出函数关系式，基本确定编程思路，得出所有可以用于训练模型的数据。</p>
-<hr />
+​~~~matlab
+%%水库优化调度代码（第二版）
+%确定初始值及数据结构
+n = 36;%计算时段数
+Vmin = 171.5;
+Vmax = 505;
+Z = zeros(36,1000);
+V = zeros(36,1000);
+V(36,:) = 377.45;
+V(1,:) = 377.45;
+Z(1,:) = 175;
+Z(36,:) = 175;%计算初始水位
+Pb = 499;%保证出力
+P = zeros(36,1000);
+SumP = 0;
+T = 10*3600*24/100000000;%各时段时间间隔
+<p>%设决策变量为下泄流量Qfd(t,1),可能出现弃水Qqs(t,1)
+%生态流量限制
+Qst = 5690;%本次计算为5690</p>
+<p>%%单时段离散化与平均出力的计算方法
+%将一时段的状态V(t)离散为M个数值
+%又水库水位限制为(145,185)
+%故首先选择将水库库容离散为40个数值（即一米一个库容）
+%又首先需要确定Qfd的离散值
+%故制作Qfd初始值表格
+%表格范围设置为（生态流量，时段最大下泄流量）
+%此次计算设Qfd为决策变量
+b = linspace(0,1,100);
+%b = 0.8;</p>
+<p>for k = 1:1000
+flag = 0;</p>
+<p>for j = 1:35</p>
+<p>t = n-j;
+%
+if t == 1
+i = 1;
+Qxx(t,i) = abs(Qrk(t,1) - (V(t+1,1) - V(t,1))/T);
+%库容曲线约束
+Z(t,i) = Kurqx(V(t,i));%当前时段末库容
+%发电水头约束
+[H(t+1,i),kcl(t,i)] = head(Qxx(t,i),Z(t,i));%输入下泄流量及上游水头
+%时段平均出力
+P(t+1,:) = kcl(t,i)*Qxx(t,i)*H(t,i)/10000;
+Pmax(t+1,i) = P(t+1,i);
+h(t+1,i) = H(t+1,i);
+break;
+else
+%}
+for i = 1:1000
+%水电站最大过流能力限制
+xxnl(t) = Xiaxnl(Z(t+1,i));%输入当前上游水位,计算当前时段水库最大下泄能力
+Qfd = linspace(Qst,xxnl(t),1000);%Qfd初始数组，共1000个数据点</p>
+<pre><code>        V(t,i) = V(t+1,i) - (Qrk(t+1,1)-Qfd(i))*T;
+        
+        if V(t,i) &lt; Vmin
+            V(t,i) = Vmin;
+            Qxx(t+1,i) = abs(Qrk(t+1,1) - (V(t+1) - V(t))/T);
+
+        %库容曲线约束
+        Z(t,i) = Kurqx(V(t,i));%当前时段末库容
+        %发电水头约束
+        [H(t+1,i),kcl(t+1,i)] = head(Qxx(t+1,i),Z(t,i));%输入下泄流量及上游水头
+        if H(t+1,i) &lt; 0
+            continue;%继续i循环
+        end
+        %时段平均出力
+        P(t+1,i) = kcl(t+1,i)*Qxx(t+1,i)*H(t+1,i)/10000;
+        %水电站预想出力限制
+        yxcl(t+1,i) = Yuxcl(H(t+1,i));%输入当前水头
+
+        continue;%跳出i循环
+
+        elseif V(t,i) &gt; Vmax
+            Qqs(t+1,i) = (V(t,i)-Vmax)/T;
+            V(t,i) = Vmax;
+            Qxx(t+1,i) = abs(Qrk(t+1,1) - (V(t,i) - V(t+1,i))/T);
+        else
+            Qxx(t+1,i) = Qfd(i);
+        end
+       
+        %库容曲线约束
+        Z(t,i) = Kurqx(V(t,i));%当前时段末库容
+        %发电水头约束
+        [H(t+1,i),kcl(t+1,i)] = head(Qxx(t+1,i),Z(t,i));%输入下泄流量及上游水头
+        %时段平均出力
+        if H(t+1,i) &lt; 0
+            continue;
+        end
+        P(t+1,i) = kcl(t+1,i)*Qxx(t+1,i)*H(t+1,i)/10000;
+        %水电站预想出力限制
+        yxcl(t+1,i) = Yuxcl(H(t+1,i));%输入当前水头
+
+
+        %%指标函数
+        %
+        if P(t,i) &gt; yxcl(t)
+            P(t,i) = yxcl(t);
+            %flag(t) = 1;
+        %&#125;
+        elseif P(t+1,i) &gt; Pb &amp;&amp; P(t,i) &lt; yxcl(t)
+            P(t+1,i) = P(t+1,i);
+            %flag(t) = 1;
+        else
+            P(t+1,i) = P(t+1,i) + b(1,k)*(P(t+1,i)-Pb);%b为惩罚系数
+        end
+</code></pre>
+<p>end
+%
+for f = 1:999
+if P(t+1,f) &gt; P(t+1,f+1)
+Ppro(t+1,f) = P(t+1,f);<br />
+end
+end
+[Pmax(t+1,1),l] = max(Ppro(t+1,1:200));
+V(t,:) = V(t,l);
+Z(t,:) = Z(t,l);
+Q(t+1,1) = Qxx(t+1,l);
+qs(t+1,1) = Qqs(t+1,l);
+h(t+1,1) = H(t+1,l);</p>
+<p>end
+end</p>
+<p>for m = 1:36
+if Pmax(m,1) &gt; Pb
+flag = flag+1;
+end
+end</p>
+<p>per(k,1) = flag/36;
+end</p>
+<pre class="highlight"><code class="">&lt;/details&gt;
+
+做出图像如下：
+
+![优化调度图像](/images/youhuadiaodu.png)
+![优化调度出库入库流量图像](/images/yhliuliang.png)
+
+## 明日任务
+
+读文献，基本得出函数关系式，基本确定编程思路，得出所有可以用于训练模型的数据。
+
+***</code></pre>
 
     </div>
 
@@ -336,7 +467,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B0%E4%BB%BB%E5%8A%A1"><span class="nav-number">1.</span> <span class="nav-text"> 新任务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90"><span class="nav-number">2.</span> <span class="nav-text"> 问题分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E6%94%B9%E8%BF%9B"><span class="nav-number">2.1.</span> <span class="nav-text"> 代码改进</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%8A%E6%97%A5%E4%BB%BB%E5%8A%A1"><span class="nav-number">3.</span> <span class="nav-text"> 今日任务</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9B%E5%BA%A6"><span class="nav-number">3.1.</span> <span class="nav-text"> 进度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B0%E7%9F%A5%E8%AF%86%E7%82%B9"><span class="nav-number">3.2.</span> <span class="nav-text"> 新知识点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%98%8E%E6%97%A5%E4%BB%BB%E5%8A%A1"><span class="nav-number">4.</span> <span class="nav-text"> 明日任务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9B%E5%BA%A6-2"><span class="nav-number">5.</span> <span class="nav-text"> 进度</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%93%E8%AE%BA%E4%BB%BB%E5%8A%A1"><span class="nav-number">5.1.</span> <span class="nav-text"> 结论&amp;任务</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BB%93%E8%AE%BA"><span class="nav-number">5.1.1.</span> <span class="nav-text"> 结论</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%98%8E%E6%97%A5%E4%BB%BB%E5%8A%A1-2"><span class="nav-number">6.</span> <span class="nav-text"> 明日任务</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B0%E4%BB%BB%E5%8A%A1"><span class="nav-number">1.</span> <span class="nav-text"> 新任务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90"><span class="nav-number">2.</span> <span class="nav-text"> 问题分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E6%94%B9%E8%BF%9B"><span class="nav-number">2.1.</span> <span class="nav-text"> 代码改进</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%8A%E6%97%A5%E4%BB%BB%E5%8A%A1"><span class="nav-number">3.</span> <span class="nav-text"> 今日任务</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9B%E5%BA%A6"><span class="nav-number">3.1.</span> <span class="nav-text"> 进度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B0%E7%9F%A5%E8%AF%86%E7%82%B9"><span class="nav-number">3.2.</span> <span class="nav-text"> 新知识点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%98%8E%E6%97%A5%E4%BB%BB%E5%8A%A1"><span class="nav-number">4.</span> <span class="nav-text"> 明日任务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9B%E5%BA%A6-2"><span class="nav-number">5.</span> <span class="nav-text"> 进度</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%93%E8%AE%BA%E4%BB%BB%E5%8A%A1"><span class="nav-number">5.1.</span> <span class="nav-text"> 结论&amp;任务</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BB%93%E8%AE%BA"><span class="nav-number">5.1.1.</span> <span class="nav-text"> 结论</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
