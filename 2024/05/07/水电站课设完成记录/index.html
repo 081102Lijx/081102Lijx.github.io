@@ -31,7 +31,7 @@
 <meta property="og:image" content="http://example.com/images/shuiweibianhuatu-1713946448261.jpg">
 <meta property="og:image" content="http://example.com/images/image-20240508161239028.png">
 <meta property="article:published_time" content="2024-05-07T13:50:00.000Z">
-<meta property="article:modified_time" content="2024-06-24T09:09:34.572Z">
+<meta property="article:modified_time" content="2024-06-26T10:10:24.571Z">
 <meta property="article:author" content="Lijx">
 <meta property="article:tag" content="课设、水电站">
 <meta name="twitter:card" content="summary">
@@ -187,7 +187,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-06-24 17:09:34" itemprop="dateModified" datetime="2024-06-24T17:09:34+08:00">2024-06-24</time>
+                <time title="修改时间：2024-06-26 18:10:24" itemprop="dateModified" datetime="2024-06-26T18:10:24+08:00">2024-06-26</time>
               </span>
 
           
@@ -484,175 +484,11 @@ V(t+1) = V(t) + (Qrk(t)-Qfd(t)-Qqs(t))*T;
 <p>需要加入惩罚系数和发电保证率之间的关系的计算，代码如下：</p>
 <details>
 <summary>代码十一<summary>
-​~~~matlab
-{
-%%水库优化调度代码
-Qst = 5690;%生态流量限制
-T = 12*24*3600/100000000;%时段间隔
-Pb = 499;%保证出力
-V(1,1) = 393;
-flg = 0;%标志位
-m = 0;%计算保证率指标
-Pbest = zeros(15000,15);
-for c = 1:46
-b = punish(c,1);%设置惩罚系数
-<p>%优化计算过程
-for j = 1:15
-Z1(1,1) = 175;
-%下泄流量范围
-l = length(Qst:1:Qst+25000);
-Qfd(1:l,j) = (Qst:1:Qst+25000)';</p>
-<p>flg = flg+1;%循环标志位</p>
-<p>for i = 1:15000
-if V(1,j) &lt; 171.5
-if i-1 == 0
-f = 1;
-Qfd(i,j) = Qfd(i-1,j);
-break;
-end</p>
-<p>if f == 1
-faulce(1,j) = 1;
-break;
-end
-%%约束条件编制
-%发电水头约束
-[H(i,1) K] = head(Qfd(i,j),Z1(1,j));%输入下泄流量及上游水头
-%水电站预想出力限制
-yxcl(i,1) = Yuxcl(H(i,1));%输入当前水头
-%水电站最大过流能力限制
-xxnl(i,1) = Xiaxnl(Z1(1,j));%输入当前上游水位</p>
-<p>%指标函数（含惩罚函数）
-output(i,j) = K * Qfd(i,j) * H(i,1)/10000;
-if output(i,j) &gt; yxcl(i,1)
-continue;
-end
-if output(i,j) &gt;= Pb
-Pcl1(i,j) = output(i,j);
-else
-Pcl1(i,j) = output(i,j) + b*(output(i,j)-Pb);
-end</p>
-<p>%递推方程
-Pbest(1,j+1) = max(Pcl1(i,:)+Pbest(1,j));</p>
-<p>end
-%建立状态转移方程
-V(1,j+1) = V(1,j) + (Qrk1(j,1)-Qfd(1,j))*T;
-%库容曲线约束
-Z1(1,j+1) = Kurqx(V(1,j+1));%当前时段末水位</p>
-<p>Z1(1,16) = 145;
-end
-%统计发电出力
-n = size(Pcl1,1);
-for i = 1:15
-for j = 1:n
-if Pcl1(j,i) == 0
-P1(1,i) = Pcl1(j-1,i);
-break;
-end
-if Pcl1(j,i) &lt;= 0
-break;
-end
-if Pcl1(j,i) &gt;= 0 &amp;&amp; j == n
-P1(1,i) = Pcl1(j,i);
-end
-end
-end
-%
-%优化计算过程2
-V(1,1) = 171.5;</p>
-<p>for j = 1:9
-Z2(1,1) = 164.27;
-%下泄流量范围
-l = length(Qst:1:Qst+15000);
-Qfd(1:l,j) = (Qst:1:Qst+15000)';</p>
-<p>flg = flg+1;%循环标志位</p>
-<p>for i = 1:15000
-if V(1,j) &lt; 171.5
-Qfd(i,j) = Qfd(i-1,j);
-break;
-end</p>
-<p>%%约束条件编制
-%发电水头约束
-[H(i,1) K] = head(Qfd(i,j),Z2(1,j));%输入下泄流量及上游水头
-%水电站预想出力限制
-yxcl(i,1) = Yuxcl(H(i,1));%输入当前水头
-%水电站最大过流能力限制
-xxnl(i,1) = Xiaxnl(Z2(1,j));%输入当前上游水位</p>
-<p>%指标函数（含惩罚函数）
-output(i,j) = K * Qfd(i,j) * H(i,1)/10000;
-if output(i,j) &gt; yxcl(i,1)
-continue;
-end
-if output(i,j) &gt;= Pb
-Pcl2(i,j) = output(i,j);
-else
-Pcl2(i,j) = output(i,j) + b*(output(i,j)-Pb);
-end</p>
-<p>%递推方程
-Pbest(i+1,j) = max(Pcl2(i,j)+Pbest(i,j));</p>
-<p>end
-%建立状态转移方程
-V(1,j+1) = V(1,j) + (Qrk2(j,1)-Qfd(1,j))*T;
-%库容曲线约束
-Z2(1,j+1) = Kurqx(V(1,j+1));%当前时段末水位</p>
-<p>Z2(1,16) = 175;
-end</p>
-<p>%统计发电出力
-n = size(Pcl2,1);
-for i = 1:9
-for j = 1:n
-if Pcl2(j,i) == 0
-P2(1,i) = Pcl2(j-1,i);
-break;
-end
-if Pcl1(j,i) &lt;= 0
-break;
-end
-if Pcl2(j,i) &gt;= 0 &amp;&amp; j == n
-P2(1,i) = Pcl2(j,i);
-end
-end
-end</p>
-<p>for i=1:15
-endZ(i,1) = Z1(1,i);
-end
-for i = 16:27
-endZ(i,1) = 145;
-end
-for i = 28:36
-endZ(i,1) = Z2(1,i-27);
-end
-plot(1:36,endZ(1:36,1));
-xlim([1 36])
-ylim([145 185])
-ylabel(&quot;水位/m&quot;);
-xlabel(&quot;旬&quot;);
-title(&quot;1975年来流优化调度水位变化曲线&quot;);
-%}</p>
-<p>%%计算发电保证率
-for k = 1:15
-P(1,k) = P1(1,k);
-end
-for k = 16:24
-P(1,k) = P2(1,k-15);
-end
-for d = 1:24
-if P(1,d) &lt; 499
-m = m+1;
-end
-end
-percent(c,1) = 1-m/24;
-end
-end
-}</p>
-<pre class="highlight"><code class="">
-&lt;/details&gt;
-
-基本完成课程设计任务。从最终得到的数据曲线来看，动态规划的问题比较大，另外两种方法均无法达到保证出力，是还没有解决的问题。常规调度第二段若完全按照调度图调度，整体发电甚至会更少。如果仍有时间，可以考虑改变出力目标，尝试全部改为保证出力计算。动态规划需要先做一些简单的小题再理解一下决策变量如何改变。
-
-先这样。over
-
-***
-</code></pre>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%%水库优化调度代码</span></span><br><span class="line">Qst = <span class="number">5690</span>;<span class="comment">%生态流量限制</span></span><br><span class="line">T = <span class="number">12</span>*<span class="number">24</span>*<span class="number">3600</span>/<span class="number">100000000</span>;<span class="comment">%时段间隔</span></span><br><span class="line">Pb = <span class="number">499</span>;<span class="comment">%保证出力</span></span><br><span class="line">V(<span class="number">1</span>,<span class="number">1</span>) = <span class="number">393</span>;</span><br><span class="line">flg = <span class="number">0</span>;<span class="comment">%标志位</span></span><br><span class="line">m = <span class="number">0</span>;<span class="comment">%计算保证率指标</span></span><br><span class="line">Pbest = <span class="built_in">zeros</span>(<span class="number">15000</span>,<span class="number">15</span>);</span><br><span class="line"><span class="keyword">for</span> c = <span class="number">1</span>:<span class="number">46</span></span><br><span class="line">b = punish(c,<span class="number">1</span>);<span class="comment">%设置惩罚系数</span></span><br><span class="line"></span><br><span class="line"><span class="comment">%优化计算过程</span></span><br><span class="line"><span class="keyword">for</span> <span class="built_in">j</span> = <span class="number">1</span>:<span class="number">15</span></span><br><span class="line">Z1(<span class="number">1</span>,<span class="number">1</span>) = <span class="number">175</span>;</span><br><span class="line"><span class="comment">%下泄流量范围</span></span><br><span class="line">l = <span class="built_in">length</span>(Qst:<span class="number">1</span>:Qst+<span class="number">25000</span>);</span><br><span class="line">Qfd(<span class="number">1</span>:l,<span class="built_in">j</span>) = (Qst:<span class="number">1</span>:Qst+<span class="number">25000</span>)&#x27;;</span><br><span class="line"></span><br><span class="line">flg = flg+<span class="number">1</span>;<span class="comment">%循环标志位</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span> = <span class="number">1</span>:<span class="number">15000</span></span><br><span class="line"><span class="keyword">if</span> V(<span class="number">1</span>,<span class="built_in">j</span>) &lt; <span class="number">171.5</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">i</span><span class="number">-1</span> == <span class="number">0</span></span><br><span class="line">        f = <span class="number">1</span>;</span><br><span class="line">    Qfd(<span class="built_in">i</span>,<span class="built_in">j</span>) = Qfd(<span class="built_in">i</span><span class="number">-1</span>,<span class="built_in">j</span>);</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> f == <span class="number">1</span></span><br><span class="line">    faulce(<span class="number">1</span>,<span class="built_in">j</span>) = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="comment">%%约束条件编制</span></span><br><span class="line"><span class="comment">%发电水头约束</span></span><br><span class="line">[H(<span class="built_in">i</span>,<span class="number">1</span>) K] = head(Qfd(<span class="built_in">i</span>,<span class="built_in">j</span>),Z1(<span class="number">1</span>,<span class="built_in">j</span>));<span class="comment">%输入下泄流量及上游水头</span></span><br><span class="line"><span class="comment">%水电站预想出力限制</span></span><br><span class="line">yxcl(<span class="built_in">i</span>,<span class="number">1</span>) = Yuxcl(H(<span class="built_in">i</span>,<span class="number">1</span>));<span class="comment">%输入当前水头</span></span><br><span class="line"><span class="comment">%水电站最大过流能力限制</span></span><br><span class="line">xxnl(<span class="built_in">i</span>,<span class="number">1</span>) = Xiaxnl(Z1(<span class="number">1</span>,<span class="built_in">j</span>));<span class="comment">%输入当前上游水位</span></span><br><span class="line"></span><br><span class="line"><span class="comment">%指标函数（含惩罚函数）</span></span><br><span class="line">output(<span class="built_in">i</span>,<span class="built_in">j</span>) = K * Qfd(<span class="built_in">i</span>,<span class="built_in">j</span>) * H(<span class="built_in">i</span>,<span class="number">1</span>)/<span class="number">10000</span>;</span><br><span class="line"><span class="keyword">if</span> output(<span class="built_in">i</span>,<span class="built_in">j</span>) &gt; yxcl(<span class="built_in">i</span>,<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">continue</span>;</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="keyword">if</span> output(<span class="built_in">i</span>,<span class="built_in">j</span>) &gt;= Pb</span><br><span class="line">    Pcl1(<span class="built_in">i</span>,<span class="built_in">j</span>) = output(<span class="built_in">i</span>,<span class="built_in">j</span>);</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    Pcl1(<span class="built_in">i</span>,<span class="built_in">j</span>) = output(<span class="built_in">i</span>,<span class="built_in">j</span>) + b*(output(<span class="built_in">i</span>,<span class="built_in">j</span>)-Pb);</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="comment">%递推方程</span></span><br><span class="line">Pbest(<span class="number">1</span>,<span class="built_in">j</span>+<span class="number">1</span>) = <span class="built_in">max</span>(Pcl1(<span class="built_in">i</span>,:)+Pbest(<span class="number">1</span>,<span class="built_in">j</span>));</span><br><span class="line"></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="comment">%建立状态转移方程</span></span><br><span class="line">V(<span class="number">1</span>,<span class="built_in">j</span>+<span class="number">1</span>) = V(<span class="number">1</span>,<span class="built_in">j</span>) + (Qrk1(<span class="built_in">j</span>,<span class="number">1</span>)-Qfd(<span class="number">1</span>,<span class="built_in">j</span>))*T;</span><br><span class="line"><span class="comment">%库容曲线约束</span></span><br><span class="line">Z1(<span class="number">1</span>,<span class="built_in">j</span>+<span class="number">1</span>) = Kurqx(V(<span class="number">1</span>,<span class="built_in">j</span>+<span class="number">1</span>));<span class="comment">%当前时段末水位</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Z1(<span class="number">1</span>,<span class="number">16</span>) = <span class="number">145</span>;</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="comment">%统计发电出力</span></span><br><span class="line">n = <span class="built_in">size</span>(Pcl1,<span class="number">1</span>);</span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span> = <span class="number">1</span>:<span class="number">15</span></span><br><span class="line">    <span class="keyword">for</span> <span class="built_in">j</span> = <span class="number">1</span>:n</span><br><span class="line">        <span class="keyword">if</span> Pcl1(<span class="built_in">j</span>,<span class="built_in">i</span>) == <span class="number">0</span></span><br><span class="line">            P1(<span class="number">1</span>,<span class="built_in">i</span>) = Pcl1(<span class="built_in">j</span><span class="number">-1</span>,<span class="built_in">i</span>);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">end</span></span><br><span class="line">        <span class="keyword">if</span> Pcl1(<span class="built_in">j</span>,<span class="built_in">i</span>) &lt;= <span class="number">0</span></span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">end</span></span><br><span class="line">        <span class="keyword">if</span> Pcl1(<span class="built_in">j</span>,<span class="built_in">i</span>) &gt;= <span class="number">0</span> &amp;&amp; <span class="built_in">j</span> == n</span><br><span class="line">            P1(<span class="number">1</span>,<span class="built_in">i</span>) = Pcl1(<span class="built_in">j</span>,<span class="built_in">i</span>);</span><br><span class="line">        <span class="keyword">end</span></span><br><span class="line">     <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="comment">%</span></span><br><span class="line"><span class="comment">%优化计算过程2</span></span><br><span class="line">V(<span class="number">1</span>,<span class="number">1</span>) = <span class="number">171.5</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> <span class="built_in">j</span> = <span class="number">1</span>:<span class="number">9</span></span><br><span class="line">Z2(<span class="number">1</span>,<span class="number">1</span>) = <span class="number">164.27</span>;</span><br><span class="line"><span class="comment">%下泄流量范围</span></span><br><span class="line">l = <span class="built_in">length</span>(Qst:<span class="number">1</span>:Qst+<span class="number">15000</span>);</span><br><span class="line">Qfd(<span class="number">1</span>:l,<span class="built_in">j</span>) = (Qst:<span class="number">1</span>:Qst+<span class="number">15000</span>)&#x27;;</span><br><span class="line"></span><br><span class="line">flg = flg+<span class="number">1</span>;<span class="comment">%循环标志位</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span> = <span class="number">1</span>:<span class="number">15000</span></span><br><span class="line"><span class="keyword">if</span> V(<span class="number">1</span>,<span class="built_in">j</span>) &lt; <span class="number">171.5</span></span><br><span class="line">    Qfd(<span class="built_in">i</span>,<span class="built_in">j</span>) = Qfd(<span class="built_in">i</span><span class="number">-1</span>,<span class="built_in">j</span>);</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="comment">%%约束条件编制</span></span><br><span class="line"><span class="comment">%发电水头约束</span></span><br><span class="line">[H(<span class="built_in">i</span>,<span class="number">1</span>) K] = head(Qfd(<span class="built_in">i</span>,<span class="built_in">j</span>),Z2(<span class="number">1</span>,<span class="built_in">j</span>));<span class="comment">%输入下泄流量及上游水头</span></span><br><span class="line"><span class="comment">%水电站预想出力限制</span></span><br><span class="line">yxcl(<span class="built_in">i</span>,<span class="number">1</span>) = Yuxcl(H(<span class="built_in">i</span>,<span class="number">1</span>));<span class="comment">%输入当前水头</span></span><br><span class="line"><span class="comment">%水电站最大过流能力限制</span></span><br><span class="line">xxnl(<span class="built_in">i</span>,<span class="number">1</span>) = Xiaxnl(Z2(<span class="number">1</span>,<span class="built_in">j</span>));<span class="comment">%输入当前上游水位</span></span><br><span class="line"></span><br><span class="line"><span class="comment">%指标函数（含惩罚函数）</span></span><br><span class="line">output(<span class="built_in">i</span>,<span class="built_in">j</span>) = K * Qfd(<span class="built_in">i</span>,<span class="built_in">j</span>) * H(<span class="built_in">i</span>,<span class="number">1</span>)/<span class="number">10000</span>;</span><br><span class="line"><span class="keyword">if</span> output(<span class="built_in">i</span>,<span class="built_in">j</span>) &gt; yxcl(<span class="built_in">i</span>,<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">continue</span>;</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="keyword">if</span> output(<span class="built_in">i</span>,<span class="built_in">j</span>) &gt;= Pb</span><br><span class="line">    Pcl2(<span class="built_in">i</span>,<span class="built_in">j</span>) = output(<span class="built_in">i</span>,<span class="built_in">j</span>);</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    Pcl2(<span class="built_in">i</span>,<span class="built_in">j</span>) = output(<span class="built_in">i</span>,<span class="built_in">j</span>) + b*(output(<span class="built_in">i</span>,<span class="built_in">j</span>)-Pb);</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="comment">%递推方程</span></span><br><span class="line">Pbest(<span class="built_in">i</span>+<span class="number">1</span>,<span class="built_in">j</span>) = <span class="built_in">max</span>(Pcl2(<span class="built_in">i</span>,<span class="built_in">j</span>)+Pbest(<span class="built_in">i</span>,<span class="built_in">j</span>));</span><br><span class="line"></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="comment">%建立状态转移方程</span></span><br><span class="line">V(<span class="number">1</span>,<span class="built_in">j</span>+<span class="number">1</span>) = V(<span class="number">1</span>,<span class="built_in">j</span>) + (Qrk2(<span class="built_in">j</span>,<span class="number">1</span>)-Qfd(<span class="number">1</span>,<span class="built_in">j</span>))*T;</span><br><span class="line"><span class="comment">%库容曲线约束</span></span><br><span class="line">Z2(<span class="number">1</span>,<span class="built_in">j</span>+<span class="number">1</span>) = Kurqx(V(<span class="number">1</span>,<span class="built_in">j</span>+<span class="number">1</span>));<span class="comment">%当前时段末水位</span></span><br><span class="line"></span><br><span class="line">Z2(<span class="number">1</span>,<span class="number">16</span>) = <span class="number">175</span>;</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="comment">%统计发电出力</span></span><br><span class="line">n = <span class="built_in">size</span>(Pcl2,<span class="number">1</span>);</span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span> = <span class="number">1</span>:<span class="number">9</span></span><br><span class="line">    <span class="keyword">for</span> <span class="built_in">j</span> = <span class="number">1</span>:n</span><br><span class="line">        <span class="keyword">if</span> Pcl2(<span class="built_in">j</span>,<span class="built_in">i</span>) == <span class="number">0</span></span><br><span class="line">            P2(<span class="number">1</span>,<span class="built_in">i</span>) = Pcl2(<span class="built_in">j</span><span class="number">-1</span>,<span class="built_in">i</span>);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">end</span></span><br><span class="line">         <span class="keyword">if</span> Pcl1(<span class="built_in">j</span>,<span class="built_in">i</span>) &lt;= <span class="number">0</span></span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">end</span></span><br><span class="line">        <span class="keyword">if</span> Pcl2(<span class="built_in">j</span>,<span class="built_in">i</span>) &gt;= <span class="number">0</span> &amp;&amp; <span class="built_in">j</span> == n</span><br><span class="line">            P2(<span class="number">1</span>,<span class="built_in">i</span>) = Pcl2(<span class="built_in">j</span>,<span class="built_in">i</span>);</span><br><span class="line">        <span class="keyword">end</span></span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">1</span>:<span class="number">15</span></span><br><span class="line">    endZ(<span class="built_in">i</span>,<span class="number">1</span>) = Z1(<span class="number">1</span>,<span class="built_in">i</span>);</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span> = <span class="number">16</span>:<span class="number">27</span></span><br><span class="line">    endZ(<span class="built_in">i</span>,<span class="number">1</span>) = <span class="number">145</span>;</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span> = <span class="number">28</span>:<span class="number">36</span></span><br><span class="line">    endZ(<span class="built_in">i</span>,<span class="number">1</span>) = Z2(<span class="number">1</span>,<span class="built_in">i</span><span class="number">-27</span>);</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="built_in">plot</span>(<span class="number">1</span>:<span class="number">36</span>,endZ(<span class="number">1</span>:<span class="number">36</span>,<span class="number">1</span>));</span><br><span class="line">xlim([<span class="number">1</span> <span class="number">36</span>])</span><br><span class="line">ylim([<span class="number">145</span> <span class="number">185</span>])</span><br><span class="line">ylabel(<span class="string">&quot;水位/m&quot;</span>);</span><br><span class="line">xlabel(<span class="string">&quot;旬&quot;</span>);</span><br><span class="line">title(<span class="string">&quot;1975年来流优化调度水位变化曲线&quot;</span>);</span><br><span class="line"><span class="comment">%&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">%%计算发电保证率</span></span><br><span class="line"><span class="keyword">for</span> k = <span class="number">1</span>:<span class="number">15</span></span><br><span class="line">    P(<span class="number">1</span>,k) = P1(<span class="number">1</span>,k);</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="keyword">for</span> k = <span class="number">16</span>:<span class="number">24</span></span><br><span class="line">    P(<span class="number">1</span>,k) = P2(<span class="number">1</span>,k<span class="number">-15</span>);</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="keyword">for</span> d = <span class="number">1</span>:<span class="number">24</span></span><br><span class="line">    <span class="keyword">if</span> P(<span class="number">1</span>,d) &lt; <span class="number">499</span></span><br><span class="line">       m = m+<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">percent(c,<span class="number">1</span>) = <span class="number">1</span>-m/<span class="number">24</span>;</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+</details>
+<p>基本完成课程设计任务。从最终得到的数据曲线来看，动态规划的问题比较大，另外两种方法均无法达到保证出力，是还没有解决的问题。常规调度第二段若完全按照调度图调度，整体发电甚至会更少。如果仍有时间，可以考虑改变出力目标，尝试全部改为保证出力计算。动态规划需要先做一些简单的小题再理解一下决策变量如何改变。</p>
+<p>先这样。over</p>
+<hr />
 
     </div>
 
