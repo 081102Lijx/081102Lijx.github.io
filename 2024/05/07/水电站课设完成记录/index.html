@@ -684,7 +684,6 @@ V(t+1) = V(t) + (Qrk(t)-Qfd(t)-Qqs(t))*T;
   if (typeof MathJax === 'undefined') {
     window.MathJax = {
       loader: {
-          load: ['[tex]/mhchem'],
         source: {
           '[tex]/amsCd': '[tex]/amscd',
           '[tex]/AMScd': '[tex]/amscd'
@@ -692,7 +691,6 @@ V(t+1) = V(t) + (Qrk(t)-Qfd(t)-Qqs(t))*T;
       },
       tex: {
         inlineMath: {'[+]': [['$', '$']]},
-          packages: {'[+]': ['mhchem']},
         tags: 'ams'
       },
       options: {
