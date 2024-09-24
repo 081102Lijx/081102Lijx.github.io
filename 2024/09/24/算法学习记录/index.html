@@ -20,19 +20,20 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="思路来自.. 去年年末第一次做了课设。对于一个设计，时间短，任务重；但对于一个作业，一个完整的解决问题的思路而言，时间还是太长。经常写着写着就忘了在这之前想到的好点子。这时我想起了补工程地质的时候查到的美国地质学家自己的石头网站，有关科普的，有关旅程的，有关成长的，一切都可以展现在小小的网页上。这是建网站的第一个契机。 最近又要开始做课设，更兼需要了解如何写论文，如何使用Linux，这是三项十">
+  <meta name="description" content="两数之和 给定一个整数数组 nums 和一个整数目标值 target，请你在该数组中找出 和为目标值 target 的那 两个 整数，并返回它们的数组下标。 你可以假设每种输入只会对应一个答案，并且你不能使用两次相同的元素。 你可以按任意顺序返回答案。 思路一、暴力求解 输入所给数组，将其遍历求和，判断其值是否等于目标值，若等于则输出两个数的数组下标。   求解代码如下  1">
 <meta property="og:type" content="article">
-<meta property="og:title" content="网站为何？">
-<meta property="og:url" content="http://example.com/2024/03/31/%E5%86%99%E4%B8%80%E5%86%99%E6%96%87%E7%AB%A0/index.html">
+<meta property="og:title" content="算法学习记录">
+<meta property="og:url" content="http://example.com/2024/09/24/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/index.html">
 <meta property="og:site_name" content="Xu an&#39;s Web">
-<meta property="og:description" content="思路来自.. 去年年末第一次做了课设。对于一个设计，时间短，任务重；但对于一个作业，一个完整的解决问题的思路而言，时间还是太长。经常写着写着就忘了在这之前想到的好点子。这时我想起了补工程地质的时候查到的美国地质学家自己的石头网站，有关科普的，有关旅程的，有关成长的，一切都可以展现在小小的网页上。这是建网站的第一个契机。 最近又要开始做课设，更兼需要了解如何写论文，如何使用Linux，这是三项十">
+<meta property="og:description" content="两数之和 给定一个整数数组 nums 和一个整数目标值 target，请你在该数组中找出 和为目标值 target 的那 两个 整数，并返回它们的数组下标。 你可以假设每种输入只会对应一个答案，并且你不能使用两次相同的元素。 你可以按任意顺序返回答案。 思路一、暴力求解 输入所给数组，将其遍历求和，判断其值是否等于目标值，若等于则输出两个数的数组下标。   求解代码如下  1">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-03-31T02:22:07.000Z">
-<meta property="article:modified_time" content="2024-06-28T11:34:34.507Z">
+<meta property="article:published_time" content="2024-09-24T06:50:58.000Z">
+<meta property="article:modified_time" content="2024-09-24T06:59:23.849Z">
 <meta property="article:author" content="Lijx">
+<meta property="article:tag" content="算法学习">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/2024/03/31/%E5%86%99%E4%B8%80%E5%86%99%E6%96%87%E7%AB%A0/">
+<link rel="canonical" href="http://example.com/2024/09/24/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">
 
 
 <script id="page-configurations">
@@ -45,7 +46,7 @@
   };
 </script>
 
-  <title>网站为何？ | Xu an's Web</title>
+  <title>算法学习记录 | Xu an's Web</title>
   
 
 
@@ -152,7 +153,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2024/03/31/%E5%86%99%E4%B8%80%E5%86%99%E6%96%87%E7%AB%A0/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/09/24/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -165,7 +166,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          网站为何？
+          算法学习记录
         </h1>
 
         <div class="post-meta">
@@ -174,16 +175,10 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2024-03-31 10:22:07" itemprop="dateCreated datePublished" datetime="2024-03-31T10:22:07+08:00">2024-03-31</time>
+              <time title="创建时间：2024-09-24 14:50:58 / 修改时间：14:59:23" itemprop="dateCreated datePublished" datetime="2024-09-24T14:50:58+08:00">2024-09-24</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-06-28 19:34:34" itemprop="dateModified" datetime="2024-06-28T19:34:34+08:00">2024-06-28</time>
-              </span>
 
           
   
@@ -194,8 +189,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2024/03/31/%E5%86%99%E4%B8%80%E5%86%99%E6%96%87%E7%AB%A0/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2024/03/31/%E5%86%99%E4%B8%80%E5%86%99%E6%96%87%E7%AB%A0/" itemprop="commentCount"></span>
+    <a title="valine" href="/2024/09/24/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2024/09/24/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -210,14 +205,19 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="思路来自..">思路来自..</h1>
-<p>去年年末第一次做了课设。对于一个设计，时间短，任务重；但对于一个作业，一个完整的解决问题的思路而言，时间还是太长。经常写着写着就忘了在这之前想到的好点子。这时我想起了补工程地质的时候查到的美国地质学家自己的石头网站，有关科普的，有关旅程的，有关成长的，一切都可以展现在小小的网页上。这是建网站的第一个契机。</p>
-<p>最近又要开始做课设，更兼需要了解如何写论文，如何使用Linux，这是三项十分重大的任务，是没有笔记万万完成不了的。我曾经尝试使用OneNote做跟踪式的思路记录，但是发现输入公式和表格是在太费时间，而且移植性很差，copy到word里简直就是灾难。那天突然想起来markdown，想起来可以自己建一个网站。某些契机下决定使用hexo建立自己的第一个网站，这算是网站的第一篇文章，就算一个开篇题词了。</p>
-<p># 想在网站上写点什么？
-很重要的部分是课设的编程进度和编程思路，同时需要记录latex语言的学习进展。其他的诸如对计算机科学领域兴趣点的发掘，专业结合的idea，日后论文的选题及进度都需要挂在网站上作为一个记录。</p>
-<p>当然，还有一个很重要的作用，就是练习使用markdown，争取能更方便更美观的和整个网络领域交流。</p>
-<p><em>也就是个大型笔记本，努努力，还能交互的那种</em></p>
-<h1 id="祝课设论文及cs学习一切顺利">祝课设、论文及CS学习一切顺利。</h1>
+        <h2 id="两数之和">两数之和</h2>
+<p>给定一个整数数组 nums 和一个整数目标值 target，请你在该数组中找出
+和为目标值 target 的那 两个 整数，并返回它们的数组下标。</p>
+<p>你可以假设每种输入只会对应一个答案，并且你不能使用两次相同的元素。</p>
+<p>你可以按任意顺序返回答案。</p>
+<h3 id="思路一暴力求解">思路一、暴力求解</h3>
+<p>输入所给数组，将其遍历求和，判断其值是否等于目标值，若等于则输出两个数的数组下标。</p>
+<details>
+<summary>
+求解代码如下
+</summary>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">twoSum</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums, <span class="type">int</span> target)</span> </span>&#123;</span><br><span class="line">		<span class="type">int</span> n = nums.<span class="built_in">size</span>();</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; ++i)&#123;</span><br><span class="line">			<span class="keyword">for</span>(<span class="type">int</span> j = i + <span class="number">1</span>; j &lt; n; ++j)&#123;</span><br><span class="line">				<span class="keyword">if</span>(nums[i] + nums[j] == target)&#123;</span><br><span class="line">					<span class="keyword">return</span> &#123;i , j&#125;;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	<span class="keyword">return</span> &#123;&#125;;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</details>
 
     </div>
 
@@ -226,17 +226,20 @@
     
 
       <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/" rel="tag"># 算法学习</a>
+          </div>
 
         
 
 
         
     <div class="post-nav">
-      <div class="post-nav-item"></div>
       <div class="post-nav-item">
-    <a href="/2024/04/12/Neo4j%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1%E8%BF%9B%E5%B1%95/" rel="next" title="Neo4j知识图谱进展">
-      Neo4j知识图谱进展 <i class="fa fa-chevron-right"></i>
+    <a href="/2024/07/04/word%E6%8E%92%E7%89%88%E5%AD%A6%E4%B9%A0/" rel="prev" title="word排版学习">
+      <i class="fa fa-chevron-left"></i> word排版学习
     </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -296,7 +299,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%80%9D%E8%B7%AF%E6%9D%A5%E8%87%AA.."><span class="nav-number">1.</span> <span class="nav-text">思路来自..</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%A5%9D%E8%AF%BE%E8%AE%BE%E8%AE%BA%E6%96%87%E5%8F%8Acs%E5%AD%A6%E4%B9%A0%E4%B8%80%E5%88%87%E9%A1%BA%E5%88%A9"><span class="nav-number">2.</span> <span class="nav-text">祝课设、论文及CS学习一切顺利。</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C"><span class="nav-number">1.</span> <span class="nav-text">两数之和</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%9D%E8%B7%AF%E4%B8%80%E6%9A%B4%E5%8A%9B%E6%B1%82%E8%A7%A3"><span class="nav-number">1.1.</span> <span class="nav-text">思路一、暴力求解</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
