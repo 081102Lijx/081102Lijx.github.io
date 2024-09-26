@@ -28,7 +28,7 @@
 <meta property="og:description" content="算法练习记录">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-09-24T06:50:58.000Z">
-<meta property="article:modified_time" content="2024-09-24T07:02:09.723Z">
+<meta property="article:modified_time" content="2024-09-25T06:47:02.414Z">
 <meta property="article:author" content="Lijx">
 <meta property="article:tag" content="算法学习">
 <meta name="twitter:card" content="summary">
@@ -175,10 +175,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2024-09-24 14:50:58 / 修改时间：15:02:09" itemprop="dateCreated datePublished" datetime="2024-09-24T14:50:58+08:00">2024-09-24</time>
+              <time title="创建时间：2024-09-24 14:50:58" itemprop="dateCreated datePublished" datetime="2024-09-24T14:50:58+08:00">2024-09-24</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-09-25 14:47:02" itemprop="dateModified" datetime="2024-09-25T14:47:02+08:00">2024-09-25</time>
+              </span>
 
           
   
@@ -219,6 +225,22 @@
 </summary>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">twoSum</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums, <span class="type">int</span> target)</span> </span>&#123;</span><br><span class="line">		<span class="type">int</span> n = nums.<span class="built_in">size</span>();</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; ++i)&#123;</span><br><span class="line">			<span class="keyword">for</span>(<span class="type">int</span> j = i + <span class="number">1</span>; j &lt; n; ++j)&#123;</span><br><span class="line">				<span class="keyword">if</span>(nums[i] + nums[j] == target)&#123;</span><br><span class="line">					<span class="keyword">return</span> &#123;i , j&#125;;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	<span class="keyword">return</span> &#123;&#125;;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 </details>
+<h2 id="回文数">回文数</h2>
+<p>给你一个整数 x ，如果 x 是一个回文整数，返回 true ；否则，返回 false
+。</p>
+<p>回文数 是指正序（从左向右）和倒序（从右向左）读都是一样的整数。</p>
+<p>例如，121 是回文，而 123 不是。</p>
+<h3 id="思路反转一半数字">思路：反转一半数字</h3>
+<p>既然数字为回文数，则可以将其反转一半来判断。</p>
+<p>首先考虑一些临界情况。一定不是回文数的有负数及个位数，故首先排除。</p>
+<p>再来考虑如何反转后半部分的数字。为得到后半数字，可以进行%10计算，在循环内重组后半数字的顺序。例如对于1221这个数字，先通过/10移除最后一个数字得到122，再求出1221%10得到1。122%10则可以得到倒数第二位数字。如果我们把倒数第一位数字*10再加上倒数第二位数字，则得到了反转后的数字，以此类推。</p>
+<p>关键在于如何知道我们已经反转了一半的数字。由于我们不断地将原始数字/10，然后给反转的数字*10，故当原始数字小于等于反转后的数字时，我们就已经处理了一般的数字了。</p>
+<details>
+<summary>
+回文数
+</summary>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="function"><span class="type">bool</span> <span class="title">isPalindrome</span><span class="params">(<span class="type">int</span> x)</span></span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(x &lt; <span class="number">0</span> || (x/<span class="number">10</span> == <span class="number">0</span> &amp;&amp; x != <span class="number">0</span>))&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="type">int</span> revertedNumber = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">while</span> (x &gt; revertedNumber)&#123;</span><br><span class="line">			revertedNumber = revertedNumber * <span class="number">10</span> + x%<span class="number">10</span>;</span><br><span class="line">			x /= <span class="number">10</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">return</span> x == revertedNumber || x == revertedNumber/<span class="number">10</span></span><br><span class="line">		<span class="comment">//若x有奇数个数字，则中间一位并不影响回文数的性质，去掉中间一位即可</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</details>
 
     </div>
 
@@ -240,7 +262,10 @@
     <a href="/2024/07/04/word%E6%8E%92%E7%89%88%E5%AD%A6%E4%B9%A0/" rel="prev" title="word排版学习">
       <i class="fa fa-chevron-left"></i> word排版学习
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2024/09/26/Grokking-Algorithms/" rel="next" title="Grokking Algorithms">
+      Grokking Algorithms <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -300,7 +325,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C"><span class="nav-number">1.</span> <span class="nav-text">两数之和</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%9D%E8%B7%AF%E4%B8%80%E6%9A%B4%E5%8A%9B%E6%B1%82%E8%A7%A3"><span class="nav-number">1.1.</span> <span class="nav-text">思路一、暴力求解</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C"><span class="nav-number">1.</span> <span class="nav-text">两数之和</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%9D%E8%B7%AF%E4%B8%80%E6%9A%B4%E5%8A%9B%E6%B1%82%E8%A7%A3"><span class="nav-number">1.1.</span> <span class="nav-text">思路一、暴力求解</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9E%E6%96%87%E6%95%B0"><span class="nav-number">2.</span> <span class="nav-text">回文数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%9D%E8%B7%AF%E5%8F%8D%E8%BD%AC%E4%B8%80%E5%8D%8A%E6%95%B0%E5%AD%97"><span class="nav-number">2.1.</span> <span class="nav-text">思路：反转一半数字</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -314,7 +339,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-count">12</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
