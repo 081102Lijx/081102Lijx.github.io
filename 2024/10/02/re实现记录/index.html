@@ -27,11 +27,14 @@
 <meta property="og:site_name" content="Xu an&#39;s Web">
 <meta property="og:description" content="手搓记事本！">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/images/1485891-20200312114647001-747774448.png">
+<meta property="og:image" content="http://example.com/images/1485891-20200312115018760-1771519452.png">
 <meta property="article:published_time" content="2024-10-02T11:08:03.000Z">
-<meta property="article:modified_time" content="2024-10-06T09:17:52.066Z">
+<meta property="article:modified_time" content="2024-11-08T11:42:07.843Z">
 <meta property="article:author" content="Lijx">
 <meta property="article:tag" content="大作业">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/1485891-20200312114647001-747774448.png">
 
 <link rel="canonical" href="http://example.com/2024/10/02/re%E5%AE%9E%E7%8E%B0%E8%AE%B0%E5%BD%95/">
 
@@ -183,7 +186,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-10-06 17:17:52" itemprop="dateModified" datetime="2024-10-06T17:17:52+08:00">2024-10-06</time>
+                <time title="修改时间：2024-11-08 19:42:07" itemprop="dateModified" datetime="2024-11-08T19:42:07+08:00">2024-11-08</time>
               </span>
 
           
@@ -270,6 +273,26 @@
 <li><p>不能从数据存储直接流向数据存储</p></li>
 <li><p>加工处理过程要符合业务要求</p></li>
 </ul>
+<h1 id="项目实现">项目实现</h1>
+<p>首先拿到项目前期代码，需要进行同步配置，保证运行顺利。</p>
+<h2 id="同步gradle">同步gradle</h2>
+<p>执行 files -&gt; Sync project with Gradle Files</p>
+<p>如果在执行过程中没有找到上述命令，则右键单击工具栏空白处（页面最上方），选择“Customize
+Menus and Toolbars...”</p>
+<figure>
+<img src="/images/1485891-20200312114647001-747774448.png"
+alt="Costomize Menus and Toolbars..." />
+<figcaption aria-hidden="true">Costomize Menus and
+Toolbars...</figcaption>
+</figure>
+<p>在搜索框输入“Sync project with Gradle Files”，选中，再点击OK</p>
+<figure>
+<img src="/images/1485891-20200312115018760-1771519452.png"
+alt="Sync" />
+<figcaption aria-hidden="true">Sync</figcaption>
+</figure>
+<h3 id="也可以选择重新配置gradle版本">也可以选择重新配置gradle版本</h3>
+<p>前期代码使用7.2.2版本的gradle。</p>
 
     </div>
 
@@ -354,7 +377,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%80%89%E9%A2%98%E5%90%8D%E7%A7%B0"><span class="nav-number">1.</span> <span class="nav-text">选题名称</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BA%94%E7%94%A8%E8%83%8C%E6%99%AF"><span class="nav-number">2.</span> <span class="nav-text">应用背景</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%A2%86%E5%9F%9F%E9%97%AE%E9%A2%98"><span class="nav-number">3.</span> <span class="nav-text">领域问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B3%BB%E7%BB%9F%E7%9B%AE%E6%A0%87"><span class="nav-number">4.</span> <span class="nav-text">系统目标</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%94%A8%E6%88%B7%E7%B1%BB%E5%9E%8B%E5%88%86%E6%9E%90"><span class="nav-number">5.</span> <span class="nav-text">用户类型分析</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%AF%8F%E7%B1%BB%E7%94%A8%E6%88%B7%E7%9A%84%E4%B8%9A%E5%8A%A1%E7%9B%AE%E6%A0%87"><span class="nav-number">6.</span> <span class="nav-text">每类用户的业务目标</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%94%A8%E4%BE%8B%E6%A8%A1%E5%9E%8B"><span class="nav-number">7.</span> <span class="nav-text">用例模型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%94%A8%E4%BE%8B%E6%8F%8F%E8%BF%B0"><span class="nav-number">8.</span> <span class="nav-text">用例描述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%9D%9E%E5%8A%9F%E8%83%BD%E6%80%A7%E6%8F%8F%E8%BF%B0"><span class="nav-number">9.</span> <span class="nav-text">非功能性描述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%94%A8%E4%BE%8B%E5%BB%BA%E6%A8%A1%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="nav-number">10.</span> <span class="nav-text">用例建模注意事项</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E6%B5%81%E5%9B%BE"><span class="nav-number">11.</span> <span class="nav-text">数据流图</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%80%89%E9%A2%98%E5%90%8D%E7%A7%B0"><span class="nav-number">1.</span> <span class="nav-text">选题名称</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BA%94%E7%94%A8%E8%83%8C%E6%99%AF"><span class="nav-number">2.</span> <span class="nav-text">应用背景</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%A2%86%E5%9F%9F%E9%97%AE%E9%A2%98"><span class="nav-number">3.</span> <span class="nav-text">领域问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B3%BB%E7%BB%9F%E7%9B%AE%E6%A0%87"><span class="nav-number">4.</span> <span class="nav-text">系统目标</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%94%A8%E6%88%B7%E7%B1%BB%E5%9E%8B%E5%88%86%E6%9E%90"><span class="nav-number">5.</span> <span class="nav-text">用户类型分析</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%AF%8F%E7%B1%BB%E7%94%A8%E6%88%B7%E7%9A%84%E4%B8%9A%E5%8A%A1%E7%9B%AE%E6%A0%87"><span class="nav-number">6.</span> <span class="nav-text">每类用户的业务目标</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%94%A8%E4%BE%8B%E6%A8%A1%E5%9E%8B"><span class="nav-number">7.</span> <span class="nav-text">用例模型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%94%A8%E4%BE%8B%E6%8F%8F%E8%BF%B0"><span class="nav-number">8.</span> <span class="nav-text">用例描述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%9D%9E%E5%8A%9F%E8%83%BD%E6%80%A7%E6%8F%8F%E8%BF%B0"><span class="nav-number">9.</span> <span class="nav-text">非功能性描述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%94%A8%E4%BE%8B%E5%BB%BA%E6%A8%A1%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="nav-number">10.</span> <span class="nav-text">用例建模注意事项</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E6%B5%81%E5%9B%BE"><span class="nav-number">11.</span> <span class="nav-text">数据流图</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%A1%B9%E7%9B%AE%E5%AE%9E%E7%8E%B0"><span class="nav-number">12.</span> <span class="nav-text">项目实现</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8C%E6%AD%A5gradle"><span class="nav-number">12.1.</span> <span class="nav-text">同步gradle</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B9%9F%E5%8F%AF%E4%BB%A5%E9%80%89%E6%8B%A9%E9%87%8D%E6%96%B0%E9%85%8D%E7%BD%AEgradle%E7%89%88%E6%9C%AC"><span class="nav-number">12.1.1.</span> <span class="nav-text">也可以选择重新配置gradle版本</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -373,7 +396,7 @@
         </a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">标签</span>
       </div>
   </nav>
