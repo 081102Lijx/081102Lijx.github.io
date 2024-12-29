@@ -180,7 +180,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-12-26 21:59:26" itemprop="dateModified" datetime="2024-12-26T21:59:26+08:00">2024-12-26</time>
+                <time title="修改时间：2024-12-29 17:11:07" itemprop="dateModified" datetime="2024-12-29T17:11:07+08:00">2024-12-29</time>
               </span>
 
           
@@ -197,6 +197,23 @@
 
       
           <h1 id="风光抽蓄调度">风光抽蓄调度</h1>
+<p>针对新能源消纳问题，研究抽蓄电站备用库容分级控制对发电效益和负荷波动的优化。</p>
+<p>有以下几个问题需要解决：</p>
+<ul>
+<li>旋转备用是什么？</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">旋转备用，是指在线但不加载的发电容量，可以在10分钟内补偿由于其他发电机或者变压器故障导致的发电缺口。</span><br><span class="line">确定旋转备用的合理分配主要是根据两点：准确可靠的需求预测和经济形势。</span><br><span class="line">通常旋转备用是以各时段内最大需求的百分比形式给出的。</span><br></pre></td></tr></table></figure>
+<ul>
+<li>适应性调度是什么？</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">自适应调度是指在满足不同工作方式相对优先级的条件下，在设计范围内，同时实时地平衡各种波束请求所要求的时间、能量和计算机资源，为一个调度间隔选择一个最佳任务序列的一种调度方法。这种调度策略能够与动态的环境相适应，与规定的不同工作方式优先级相适应，与可用的时间、能量和计算机资源量相适应。针对多任务或者多功能雷达，自适应调度策略被认为是最灵活最有效的调度策略。</span><br><span class="line">适应性调度指在不同约束条件下，抽水蓄能电站发电应该根据不同调度方案进行调度，以期达到整体调度结果的优化。在本文中，根据不同等效负荷设置不同调度方案可以提高抽蓄电站在不同发电约束下的适应性。</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>等效负荷是什么？怎么划分？</p></li>
+<li><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">剩余负荷：电力供应方提供的电力大于用户实际消耗电力的部分</span><br><span class="line">实际负荷：是指电力系统在某一时刻或时间段内实际消耗的电能总量。</span><br><span class="line">等效负荷：电网总负荷-除抽蓄外的所有 </span><br><span class="line">经过简单统计，由于季节变化，风光储的等效负荷出现了很明显的季节性，所以可以考虑按照水文年划分等效负荷分级。</span><br></pre></td></tr></table></figure></li>
+<li><p>备用库容怎么划分？ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">根据已有文献，备用库容大多按照正常库容的百分比进行划分，此处依然先考虑按照百分比进行划分。但是考虑引入参数对比在同一等效负荷情况下不同百分比划分对优化结果的影响。</span><br></pre></td></tr></table></figure></p></li>
+<li><p>数据资料有华中地区及四个省的发电负荷，该如何使用？</p></li>
+<li><p>RLV、发电、协调最优分别需要如何计算？</p></li>
+</ul>
 <h1 id="智能算法在动态优化问题的应用">智能算法在动态优化问题的应用</h1>
 <p>假设我们有一个动态系统，其状态随时间变化。我们希望最小化一个目标函数，该目标函数依赖于系统的状态和控制变量。具体来说，我们考虑一个简单的线性系统：</p>
 <p>[ x_{t+1} = a x_t + b u_t ]</p>
