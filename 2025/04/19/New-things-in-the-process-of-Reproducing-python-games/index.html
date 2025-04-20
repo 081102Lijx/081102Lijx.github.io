@@ -28,7 +28,7 @@
 <meta property="og:description" content="anything new for me in python met in python-free-games">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-04-19T13:02:04.000Z">
-<meta property="article:modified_time" content="2025-04-19T13:55:16.429Z">
+<meta property="article:modified_time" content="2025-04-20T08:26:56.256Z">
 <meta property="article:author" content="Lijx">
 <meta property="article:tag" content="python">
 <meta name="twitter:card" content="summary">
@@ -175,10 +175,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2025-04-19 21:02:04 / 修改时间：21:55:16" itemprop="dateCreated datePublished" datetime="2025-04-19T21:02:04+08:00">2025-04-19</time>
+              <time title="创建时间：2025-04-19 21:02:04" itemprop="dateCreated datePublished" datetime="2025-04-19T21:02:04+08:00">2025-04-19</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2025-04-20 16:26:56" itemprop="dateModified" datetime="2025-04-20T16:26:56+08:00">2025-04-20</time>
+              </span>
 
           
   
@@ -249,6 +255,52 @@ x(the third parameter specifies the X-coordinate of the top-left corner
 of the window on the screen), start y(the fourth parameters specifies
 the Y-coordinate of the top-left corner of the window on the
 screen)</p></li>
+<li><p>hideturtle()</p>
+<p>The hideturtle() function in your code is used to hide the turtle
+cursor (the arrow or shape that represents the turtle), where you don't
+want the turtle cursor to be visible while drawing or updating the
+game.</p>
+<p>It is a simple function that only hides the turtle cursor. It doesn't
+require any additional information or parameters because its purpose is
+singular and straightforward: to make the turtle invisible. It acts on
+the current turtle object.</p></li>
+<li><p>tracer()</p>
+<p>The tracer() is a function used to control the animation speed of the
+turtle graphics. By default, the turtle module updates the screen after
+every drawing action, which can make complex drawings slow.</p>
+<p>The tracer() function allows you to disable or control the frequency
+of screen updates, making the drawing process faster or smoother.</p>
+<p>Syntax:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tracer(n=<span class="literal">None</span>, delay=<span class="literal">None</span>)</span><br></pre></td></tr></table></figure>
+<p>n:If set to 0, it disables automatic screen updates entirely. You
+will need to call update() manually to refresh the screen. If set to a
+positive integer, it updates the screen every nth drawing action.</p>
+<p>delay: Set a delay(in milliseconds) between updates.</p></li>
+<li><p>listen()</p>
+<p>listen() is a function that sets the focus on the Turtle graphics
+window to capture keyboard events. It enables the program to respond to
+key presses by associating specific keys with functions using
+onkey()</p></li>
+<li><p>done()</p>
+<p>In the turtle module, the done() function is used to indicate that
+the Turtle graphics program has finished executing. It keeps the Turtle
+graphics window open, allowing the user to view the final state of
+drawing or game.</p>
+<p>Without done(), the Turtle graphics window may close immediately
+after the program finishes running, especially when executed in certain
+environments.</p></li>
+<li><p>undo()</p>
+<p>undo() function is used to reverse the last action performed by the
+turtle. This can include actions like drawing a line, moving the turtle,
+or writing text.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">writer.undo()</span><br><span class="line">writer.write(state[<span class="string">&#x27;score&#x27;</span>])</span><br></pre></td></tr></table></figure>
+<p>writer.undo() removes the last action performed by the writer turtle,
+which is likely the previously written score. This ensures that the old
+score is erased before writing the update score with
+writer.write(state['state']).</p></li>
+<li><p>clear()</p>
+<p>Used to erase all drawings made by the turtle on the screen. It
+simply clears the visual content created by the turtle.</p></li>
 </ul>
 <h2 id="lambda">Lambda</h2>
 <p>In python, a <strong>lambda</strong> is a way to create an anonymous
@@ -265,6 +317,36 @@ returns</li>
 <p>Using lambda allows you to define these small, one-time-use functions
 inline without needing to define separate named functions for each key
 press. It keeps the code concise and readable.</p>
+<h2 id="dot.">Dot(.)</h2>
+<p>In pacman.py, I've noticed lots of dots. Let's discuss the function
+of these dots and summarize dots' different functions in Python.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">change</span>(<span class="params">x,y</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Change the direction of the pacman&quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">if</span> valid(pacman + vector(x,y)):</span><br><span class="line">        aim.x = x</span><br><span class="line">        aim.y = y</span><br></pre></td></tr></table></figure>
+<p>The dot(.) in aim.x is used to access an attribute or method of an
+object in Python. In this case, aim is an instance of the vector class,
+and x is one of its attributes. The dot allows you to access or modify
+the value of x within the aim object.</p>
+<p>General use of the dot(.) in Python:</p>
+<ul>
+<li><strong>Accessing Attributes:</strong>
+<ul>
+<li>Example: aim.x accesses the x attribute of the aim object.</li>
+<li>Example: writer.color access the color method of the writer
+object</li>
+</ul></li>
+<li><strong>Calling Methods:</strong>
+<ul>
+<li>Example: writer.goto(160,160) calls the goto method of the writer
+object</li>
+</ul></li>
+<li><strong>Accessing Modules or Classes:</strong>
+<ul>
+<li>Example: random.choice accesses the choice function from the random
+module.</li>
+</ul></li>
+</ul>
+<p>All in all, the dot(.) always serves the same purpose: <strong>to
+access an attribute or method of an object</strong>, the specific
+behavior depends on the object being accassed.</p>
 
     </div>
 
@@ -346,7 +428,7 @@ press. It keeps the code concise and readable.</p>
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#turtle"><span class="nav-number">1.</span> <span class="nav-text">Turtle</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lambda"><span class="nav-number">2.</span> <span class="nav-text">Lambda</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#turtle"><span class="nav-number">1.</span> <span class="nav-text">Turtle</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lambda"><span class="nav-number">2.</span> <span class="nav-text">Lambda</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dot."><span class="nav-number">3.</span> <span class="nav-text">Dot(.)</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
