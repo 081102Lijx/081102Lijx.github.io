@@ -266,8 +266,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="第一章-程序设计综述"><a class="markdownIt-Anchor" href="#第一章-程序设计综述"></a> 第一章 程序设计：综述</h1>
-<h2 id="13-递归简论"><a class="markdownIt-Anchor" href="#13-递归简论"></a> 1.3 递归简论</h2>
+        <h1 id="第一章-程序设计综述">第一章 程序设计：综述</h1>
+<h2 id="递归简论">1.3 递归简论</h2>
 <p>编写递归程序时，要牢记递归的四条基本法则：</p>
 <ul>
 <li>基准情形</li>
@@ -275,8 +275,8 @@
 <li>设计法则</li>
 <li>合成效益法则</li>
 </ul>
-<h2 id="15-c细节"><a class="markdownIt-Anchor" href="#15-c细节"></a> 1.5 C++细节</h2>
-<h3 id="151-指针"><a class="markdownIt-Anchor" href="#151-指针"></a> 1.5.1 指针</h3>
+<h2 id="c细节">1.5 C++细节</h2>
+<h3 id="指针">1.5.1 指针</h3>
 <p>指针变量是一种存放另一对象所占用的地址的变量。例如如下例程：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	IntCell* m;</span><br><span class="line">	m = <span class="keyword">new</span> <span class="built_in">IntCell</span>(<span class="number">5</span>);</span><br><span class="line">	m-&gt;<span class="built_in">write</span>(<span class="number">5</span>);</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;Cell contents: &quot;</span> &lt;&lt; m-&gt;<span class="built_in">read</span>() &lt;&lt; endl;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">delete</span> m;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
@@ -299,10 +299,12 @@
 <li>通过指针访问对象的成员</li>
 </ul>
 <p>如果一个指针变量指向一个类类型的对象，那么所指对象的（可见）成员能够通过-&gt;操作符被访问。</p>
-<h3 id="152-左值-右值和引用"><a class="markdownIt-Anchor" href="#152-左值-右值和引用"></a> 1.5.2 左值、右值和引用</h3>
+<h3 id="左值右值和引用">1.5.2 左值、右值和引用</h3>
 <p>如果程序中有一个变量名，那么他就是一个左值。</p>
-<p>在C++11中，<em>左值引用</em> 的声明是通过在某个类型后防止一个符号 <em>&amp;</em> 来进行的。<em>右值引用</em> 是通过在某个类型后面放置一个 <em>&amp;&amp;</em> 来进行的。</p>
-<h4 id="左值引用的用途"><a class="markdownIt-Anchor" href="#左值引用的用途"></a> 左值引用的用途</h4>
+<p>在C++11中，<em>左值引用</em> 的声明是通过在某个类型后防止一个符号
+<em>&amp;</em> 来进行的。<em>右值引用</em> 是通过在某个类型后面放置一个
+<em>&amp;&amp;</em> 来进行的。</p>
+<h4 id="左值引用的用途">左值引用的用途</h4>
 <p>1、给结构复杂的名称起别名</p>
 <p>2、范围for循环</p>
 <p>3、避免复制</p>
@@ -390,7 +392,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%BB%BC%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text"> 第一章 程序设计：综述</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#13-%E9%80%92%E5%BD%92%E7%AE%80%E8%AE%BA"><span class="nav-number">1.1.</span> <span class="nav-text"> 1.3 递归简论</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#15-c%E7%BB%86%E8%8A%82"><span class="nav-number">1.2.</span> <span class="nav-text"> 1.5 C++细节</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#151-%E6%8C%87%E9%92%88"><span class="nav-number">1.2.1.</span> <span class="nav-text"> 1.5.1 指针</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#152-%E5%B7%A6%E5%80%BC-%E5%8F%B3%E5%80%BC%E5%92%8C%E5%BC%95%E7%94%A8"><span class="nav-number">1.2.2.</span> <span class="nav-text"> 1.5.2 左值、右值和引用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B7%A6%E5%80%BC%E5%BC%95%E7%94%A8%E7%9A%84%E7%94%A8%E9%80%94"><span class="nav-number">1.2.2.1.</span> <span class="nav-text"> 左值引用的用途</span></a></li></ol></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%BB%BC%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">第一章 程序设计：综述</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%92%E5%BD%92%E7%AE%80%E8%AE%BA"><span class="nav-number">1.1.</span> <span class="nav-text">1.3 递归简论</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#c%E7%BB%86%E8%8A%82"><span class="nav-number">1.2.</span> <span class="nav-text">1.5 C++细节</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8C%87%E9%92%88"><span class="nav-number">1.2.1.</span> <span class="nav-text">1.5.1 指针</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B7%A6%E5%80%BC%E5%8F%B3%E5%80%BC%E5%92%8C%E5%BC%95%E7%94%A8"><span class="nav-number">1.2.2.</span> <span class="nav-text">1.5.2 左值、右值和引用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B7%A6%E5%80%BC%E5%BC%95%E7%94%A8%E7%9A%84%E7%94%A8%E9%80%94"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">左值引用的用途</span></a></li></ol></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
