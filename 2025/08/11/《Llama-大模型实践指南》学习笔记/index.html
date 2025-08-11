@@ -22,17 +22,20 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta name="description" content="Per aspra ad astra">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Xu an&#39;s Web">
-<meta property="og:url" content="http://example.com/archives/2024/05/index.html">
+  <meta name="description" content="大模型教材3">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《Llama 大模型实践指南》学习笔记">
+<meta property="og:url" content="http://example.com/2025/08/11/%E3%80%8ALlama-%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%9E%E8%B7%B5%E6%8C%87%E5%8D%97%E3%80%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="Xu an&#39;s Web">
-<meta property="og:description" content="Per aspra ad astra">
+<meta property="og:description" content="大模型教材3">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-08-11T03:14:25.000Z">
+<meta property="article:modified_time" content="2025-08-11T07:42:49.237Z">
 <meta property="article:author" content="Lijx">
+<meta property="article:tag" content="LLM">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/archives/2024/05/">
+<link rel="canonical" href="http://example.com/2025/08/11/%E3%80%8ALlama-%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%9E%E8%B7%B5%E6%8C%87%E5%8D%97%E3%80%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
 
 
 <script id="page-configurations">
@@ -40,12 +43,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>归档 | Xu an's Web</title>
+  <title>《Llama 大模型实践指南》学习笔记 | Xu an's Web</title>
   
 
 
@@ -188,56 +191,156 @@
         <div class="content-wrap">
           
 
-          <div class="content archive">
+          <div class="content post posts-expand">
             
 
+    
   
   
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2025/08/11/%E3%80%8ALlama-%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%9E%E8%B7%B5%E6%8C%87%E5%8D%97%E3%80%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/Avatar.jpg">
+      <meta itemprop="name" content="Lijx">
+      <meta itemprop="description" content="Per aspra ad astra">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Xu an's Web">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          《Llama 大模型实践指南》学习笔记
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2025-08-11 11:14:25 / 修改时间：15:42:49" itemprop="dateCreated datePublished" datetime="2025-08-11T11:14:25+08:00">2025-08-11</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Research/" itemprop="url" rel="index"><span itemprop="name">Research</span></a>
+                </span>
+            </span>
+
+          
   
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <span class="collection-header">嗯..! 目前共计 21 篇日志。 继续努力。</span>
-      </div>
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2025/08/11/%E3%80%8ALlama-%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%9E%E8%B7%B5%E6%8C%87%E5%8D%97%E3%80%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2025/08/11/%E3%80%8ALlama-%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%9E%E8%B7%B5%E6%8C%87%E5%8D%97%E3%80%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+            <div class="post-description">大模型教材3</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2024</span>
+        <h3 id="准备微调训练数据的7个原则">准备微调训练数据的7个原则</h3>
+<ul>
+<li><p>数据质量</p>
+<p>确保数据时准确的、清洗过的，并且没有垃圾数据产生噪声</p></li>
+<li><p>数据集规模</p>
+<p>数据集规模的大小也很重要，应该确保数据样本充足，数据集中的文本数量应该在几千到几十万之间。</p></li>
+<li><p>数据多样性</p>
+<p>数据应覆盖多种场景、领域和用户群体</p></li>
+<li><p>数据平衡</p>
+<p>避免数据集中存在严重的类别不平衡或偏见</p></li>
+<li><p>时间和空间分布</p>
+<p>确保数据能准确地反应真实世界的时间和空间分布，重要的步骤包括跨多个时间段和地理位置收集数据、定期更新数据集、考虑特殊或突发事件的影响，以及使用多种数据源和权重调整策略。</p></li>
+<li><p>数据安全性和合规性</p>
+<p>遵循数据安全性和合规性原则，遵守所在国家的法律。</p></li>
+<li><p>相似性</p>
+<p>在准备微调训练数据时，应注意确保数据之间是相互关联的，并且是易于泛化的。</p></li>
+</ul>
+<h3
+id="通过多轮对话存储解决信息流失问题">通过多轮对话存储解决信息流失问题</h3>
+<ul>
+<li><p>拼接历史与当前输入</p>
+<p>拼接历史与当前输入是一种有效但受限的方法，它能够让模型获取更全面的上下文信息，但同时也面临着输入长度限制、计算开销和信息冗余等问题。</p></li>
+<li><p>上下文向量</p>
+<p>在对话模型中，隐藏层通常包含丰富的上下文信息。可以从模型的隐藏层中提取一个固定长度的向量，这个向量可以作为上下文信息在多轮对话之间传递。</p></li>
+<li><p>对话状态追踪</p>
+<p>通过在每轮对话后用模型预测出的槽(slots)和意图(Intends)来更新对话状态，系统能够更准确地满足用户需求。</p></li>
+<li><p>状态压缩</p>
+<p>状态压缩是一个将对话状态从高维空间映射到低维空间的过程，通常通过降维技术或神经网络模型（如自动编码器），以减少存储需求和计算负担。</p></li>
+<li><p>增量学习和在线学习</p>
+<p>增量学习是一种让模型在使用过程中不断更新自己的学习方法。与之类似，在线学习是一种更为实时的学习模式，模型在每次与用户交互后都可能进行更新。</p></li>
+</ul>
+<h3 id="提高大模型多轮对话应对能力">提高大模型多轮对话应对能力</h3>
+<ul>
+<li><p>针对性的数据集与微调</p>
+<p>这个数据集中应包括典型的用户输入和系统响应，以及可能的用户意图和上下文信息。</p></li>
+<li><p>实时反馈与自适应</p>
+<p>实时反馈机制是一种在模型与用户或系统交互过程中实时收集和分析数据，并且用这些数据来调整模型参数或行为的方法。</p></li>
+<li><p>强化学习优化</p>
+<p>强化学习是一种让模型通过与环境的交互来学习如何执行任务的机器学习方法。在多轮对话系统中，这通常意味着优化一系列对话策略或动作，以实现特定的目标。</p></li>
+<li><p>上下文感知与个性化</p>
+<p>上下文感知是模型能够理解并利用上下文信息做出合适的决策。这饿信息通常包括用户以往的查询记录、交互记录、购买行为、社交网络数据，以及明确表示的偏好等。</p></li>
+<li><p>多模态与多任务学习</p>
+<p>多模态与多任务学习提供了一种扩展模型能力的方法，使其能处理多种类型的输入和输出，或者同时处理多个任务。这种方法不仅能提供更丰富的用户体验，还能使模型的适用范围扩大。</p></li>
+<li><p>错误处理与恢复策略</p>
+<p>错误处理策略是一套用于识别、处理错误输入或系统行为的规则和程序，通常包括输入验证、异常捕获和错误日志记录等。恢复策略是在错误发生后，如何将对话流程引导回正常轨道的一系列动作或指导原则。</p></li>
+</ul>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    
+    
+    
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2024-05-07T21:50:00+08:00"
-              content="2024-05-07">
-          05-07
-        </time>
-      </div>
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/LLM/" rel="tag"># LLM</a>
+          </div>
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2024/05/07/%E6%B0%B4%E7%94%B5%E7%AB%99%E8%AF%BE%E8%AE%BE%E5%AE%8C%E6%88%90%E8%AE%B0%E5%BD%95/" itemprop="url">
-            <span itemprop="name">水电站课设完成记录</span>
-          </a>
-      </div>
+        
 
-    </header>
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2025/07/24/%E7%BB%88%E4%BA%8E%E5%87%BA%E5%8F%91%E7%9A%84%E6%97%85%E8%A1%8C/" rel="prev" title="六月摄影总结">
+      <i class="fa fa-chevron-left"></i> 六月摄影总结
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
   </article>
-
-
-    </div>
-  </div>
   
   
-  
-
   
 
 
 
           </div>
           
+    <div class="comments" id="valine-comments"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -284,6 +387,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%87%86%E5%A4%87%E5%BE%AE%E8%B0%83%E8%AE%AD%E7%BB%83%E6%95%B0%E6%8D%AE%E7%9A%847%E4%B8%AA%E5%8E%9F%E5%88%99"><span class="nav-number">1.</span> <span class="nav-text">准备微调训练数据的7个原则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%9A%E8%BF%87%E5%A4%9A%E8%BD%AE%E5%AF%B9%E8%AF%9D%E5%AD%98%E5%82%A8%E8%A7%A3%E5%86%B3%E4%BF%A1%E6%81%AF%E6%B5%81%E5%A4%B1%E9%97%AE%E9%A2%98"><span class="nav-number">2.</span> <span class="nav-text">通过多轮对话存储解决信息流失问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%90%E9%AB%98%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%A4%9A%E8%BD%AE%E5%AF%B9%E8%AF%9D%E5%BA%94%E5%AF%B9%E8%83%BD%E5%8A%9B"><span class="nav-number">3.</span> <span class="nav-text">提高大模型多轮对话应对能力</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
