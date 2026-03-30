@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.1.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/bitbug_favicon_middle.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/bitbug_favicon_small.ico">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
+  </script>
+
+  <meta name="description" content="cc改善生活">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Claud code windows 配置指南">
+<meta property="og:url" content="http://example.com/2026/03/30/Claud-code-windows-%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8D%97/index.html">
+<meta property="og:site_name" content="Xu an&#39;s Web">
+<meta property="og:description" content="cc改善生活">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2026-03-30T00:25:03.000Z">
+<meta property="article:modified_time" content="2026-03-30T00:27:39.352Z">
+<meta property="article:author" content="Lijx">
+<meta property="article:tag" content="AI agent">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/2026/03/30/Claud-code-windows-%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8D%97/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Claud code windows 配置指南 | Xu an's Web</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Xu an's Web</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+  <a href="https://github.com/081102Lijx" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2026/03/30/Claud-code-windows-%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8D%97/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/Avatar.jpg">
+      <meta itemprop="name" content="Lijx">
+      <meta itemprop="description" content="Per aspra ad astra">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Xu an's Web">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Claud code windows 配置指南
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2026-03-30 08:25:03 / 修改时间：08:27:39" itemprop="dateCreated datePublished" datetime="2026-03-30T08:25:03+08:00">2026-03-30</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Reaserch/" itemprop="url" rel="index"><span itemprop="name">Reaserch</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2026/03/30/Claud-code-windows-%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8D%97/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2026/03/30/Claud-code-windows-%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8D%97/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+            <div class="post-description">cc改善生活</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="前置要求">前置要求</h2>
+<table>
+<thead>
+<tr>
+<th>依赖项</th>
+<th>最低版本</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Node.js</td>
+<td>18.x 及以上</td>
+<td>运行环境</td>
+</tr>
+<tr>
+<td>npm</td>
+<td>随 Node.js 安装</td>
+<td>包管理器</td>
+</tr>
+<tr>
+<td>Git</td>
+<td>任意版本</td>
+<td>可选，代码管理</td>
+</tr>
+<tr>
+<td>Anthropic API Key</td>
+<td>—</td>
+<td>必须提前申请</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="一安装-node.js">一、安装 Node.js</h2>
+<ol type="1">
+<li>访问 <a target="_blank" rel="noopener" href="https://nodejs.org">https://nodejs.org</a>，下载
+<strong>LTS 版本</strong>安装包</li>
+<li>运行安装程序，全程点击 <strong>Next</strong>，保持默认选项</li>
+<li>安装完成后，打开 PowerShell 或 CMD 验证：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
+<hr />
+<h2 id="二安装-claude-code">二、安装 Claude Code</h2>
+<p>打开 <strong>PowerShell（管理员）</strong> 或
+<strong>CMD</strong>，执行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g @anthropic-ai/claude-code</span><br></pre></td></tr></table></figure>
+<p>验证安装成功：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">claude --version</span><br></pre></td></tr></table></figure>
+<hr />
+<h2 id="三配置-api-key">三、配置 API Key</h2>
+<h3 id="方式一环境变量推荐">方式一：环境变量（推荐）</h3>
+<p><strong>临时设置（当前会话有效）：</strong></p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$env:ANTHROPIC_API_KEY</span> = <span class="string">&quot;sk-ant-xxxxxxxxxxxxxxxx&quot;</span></span><br></pre></td></tr></table></figure>
+<p><strong>永久设置（系统级）：</strong></p>
+<ol type="1">
+<li>按 <code>Win + S</code> 搜索"环境变量"</li>
+<li>点击 <strong>"编辑系统环境变量"</strong></li>
+<li>点击 <strong>"环境变量"</strong> 按钮</li>
+<li>在"用户变量"中点击 <strong>"新建"</strong>
+<ul>
+<li>变量名：<code>ANTHROPIC_API_KEY</code></li>
+<li>变量值：<code>sk-ant-xxxxxxxxxxxxxxxx</code></li>
+</ul></li>
+<li>点击确定保存，<strong>重启终端</strong>生效</li>
+</ol>
+<h3 id="方式二登录命令">方式二：登录命令</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">claude</span><br></pre></td></tr></table></figure>
+<p>首次运行会引导你输入 API Key，自动保存到配置文件。</p>
+<hr />
+<h2 id="四首次运行">四、首次运行</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 进入你的项目目录</span></span><br><span class="line"><span class="built_in">cd</span> D:\your-project</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动 Claude Code</span></span><br><span class="line">claude</span><br></pre></td></tr></table></figure>
+<p>或直接带任务启动：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">claude <span class="string">&quot;帮我解释这个项目的结构&quot;</span></span><br></pre></td></tr></table></figure>
+<hr />
+<h2 id="五常用命令">五、常用命令</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 交互式对话</span></span><br><span class="line">claude</span><br><span class="line"></span><br><span class="line"><span class="comment"># 执行单次任务</span></span><br><span class="line">claude <span class="string">&quot;帮我写一个 README&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看帮助</span></span><br><span class="line">claude --<span class="built_in">help</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看版本</span></span><br><span class="line">claude --version</span><br><span class="line"></span><br><span class="line"><span class="comment"># 更新到最新版本</span></span><br><span class="line">npm update -g @anthropic-ai/claude-code</span><br></pre></td></tr></table></figure>
+<hr />
+<h2 id="六使用-cc-switch-管理配置">六、使用 cc-switch 管理配置</h2>
+<p><strong>cc-switch</strong> 是一个跨平台桌面工具，支持通过统一界面管理
+Claude Code、Codex、Gemini CLI 等多个 CLI
+工具的配置，无需手动编辑配置文件。</p>
+<h3 id="安装">安装</h3>
+<p>前往 GitHub Releases 页面下载 Windows 安装包：</p>
+<blockquote>
+<p>https://github.com/farion1231/cc-switch/releases</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>文件名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CC-Switch-vX.X.X-Windows.msi</code></td>
+<td>标准安装版（推荐）</td>
+</tr>
+<tr>
+<td><code>CC-Switch-vX.X.X-Windows-Portable.zip</code></td>
+<td>免安装便携版</td>
+</tr>
+</tbody>
+</table>
+<p>下载后双击 <code>.msi</code> 安装，或解压 <code>.zip</code>
+直接运行。</p>
+<h3 id="主要功能">主要功能</h3>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 79%" />
+</colgroup>
+<thead>
+<tr>
+<th>功能</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>50+ 供应商预设</td>
+<td>一键切换 API 提供商（官方、第三方中转、AWS Bedrock 等）</td>
+</tr>
+<tr>
+<td>统一 MCP 管理</td>
+<td>跨应用同步 MCP / Prompts / Skills 配置</td>
+</tr>
+<tr>
+<td>系统托盘快切</td>
+<td>无需打开主界面，托盘直接切换 Provider</td>
+</tr>
+<tr>
+<td>云同步</td>
+<td>支持 OneDrive、Dropbox、WebDAV 等同步配置</td>
+</tr>
+<tr>
+<td>用量追踪</td>
+<td>可视化 Token 消耗、费用与请求趋势</td>
+</tr>
+<tr>
+<td>会话管理</td>
+<td>浏览和恢复各工具的历史对话</td>
+</tr>
+</tbody>
+</table>
+<h3 id="基本使用流程">基本使用流程</h3>
+<ol type="1">
+<li>打开 cc-switch，点击 <strong>"Add Provider"</strong></li>
+<li>选择内置预设（如官方 Claude、第三方中转）或手动填写自定义配置</li>
+<li>点击切换目标 Provider（或通过系统托盘快速切换）</li>
+<li><strong>重启终端</strong>使配置生效（Claude Code
+支持热切换，无需重启）</li>
+</ol>
+<h3 id="恢复官方登录">恢复官方登录</h3>
+<p>如需切回 Anthropic 官方账号：</p>
+<ol type="1">
+<li>在 cc-switch 中添加 <strong>官方预设</strong></li>
+<li>切换至该 Provider</li>
+<li>在终端执行 <code>claude</code> 完成 OAuth 登录授权</li>
+</ol>
+<h3 id="windows-注意事项">Windows 注意事项</h3>
+<ul>
+<li>安装时若出现 SmartScreen 警告，点击 <strong>"更多信息" →
+"仍要运行"</strong> 即可</li>
+<li>v3.9.1 起已修复 Windows 下 <code>npx</code>/<code>npm</code>
+命令兼容性问题（通过 <code>cmd /c</code> 包装）</li>
+<li>默认代理端口为 <strong>15721</strong>（旧版为
+5000，如有冲突请检查端口占用）</li>
+</ul>
+<hr />
+<h2 id="七ide-集成">七、IDE 集成</h2>
+<h3 id="vs-code">VS Code</h3>
+<ol type="1">
+<li>安装 VS Code 插件：搜索 <strong>Claude Code</strong></li>
+<li>在设置中填入 API Key</li>
+<li>使用 <code>Ctrl + Shift + P</code> 呼出命令面板，搜索
+<code>Claude</code></li>
+</ol>
+<h3 id="终端推荐">终端推荐</h3>
+<p>Windows 下推荐使用以下终端以获得最佳体验：</p>
+<ul>
+<li><strong>Windows Terminal</strong>（推荐）</li>
+<li><strong>PowerShell 7+</strong></li>
+<li><strong>Git Bash</strong></li>
+</ul>
+<blockquote>
+<p>⚠️ 不推荐使用老版 CMD，可能存在字符编码问题</p>
+</blockquote>
+<hr />
+<h2 id="八配置文件">八、配置文件</h2>
+<p>Claude Code 的配置文件路径：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\&lt;用户名&gt;\.claude\</span><br><span class="line">├── settings.json       # 全局配置</span><br><span class="line">└── projects\           # 项目记忆目录</span><br></pre></td></tr></table></figure>
+<p><code>settings.json</code> 示例：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;model&quot;</span><span class="punctuation">:</span> <span class="string">&quot;claude-opus-4-6&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;theme&quot;</span><span class="punctuation">:</span> <span class="string">&quot;dark&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;autoApprove&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+<hr />
+<h2 id="九常见问题">九、常见问题</h2>
+<h3 id="q-提示-claude-命令不存在">Q: 提示 <code>claude</code>
+命令不存在？</h3>
+<p>检查 npm 全局路径是否在 PATH 中：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config get prefix</span><br></pre></td></tr></table></figure>
+<p>将输出路径（如
+<code>C:\Users\xxx\AppData\Roaming\npm</code>）添加到系统环境变量
+<code>PATH</code> 中。</p>
+<h3 id="q-api-key-无效">Q: API Key 无效？</h3>
+<ul>
+<li>确认 Key 以 <code>sk-ant-</code> 开头</li>
+<li>检查账户余额是否充足</li>
+<li>确认没有多余的空格或换行符</li>
+</ul>
+<h3 id="q-中文乱码">Q: 中文乱码？</h3>
+<p>在 PowerShell 中执行：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[<span class="type">Console</span>]::OutputEncoding = [<span class="type">System.Text.Encoding</span>]::UTF8</span><br><span class="line">chcp <span class="number">65001</span></span><br></pre></td></tr></table></figure>
+<p>或在 Windows Terminal 设置中将默认编码改为
+<strong>UTF-8</strong>。</p>
+<h3 id="q-网络连接问题">Q: 网络连接问题？</h3>
+<p>如需代理，设置环境变量：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$env:HTTPS_PROXY</span> = <span class="string">&quot;http://127.0.0.1:7890&quot;</span></span><br><span class="line"><span class="variable">$env:HTTP_PROXY</span>  = <span class="string">&quot;http://127.0.0.1:7890&quot;</span></span><br></pre></td></tr></table></figure>
+<hr />
+<h2 id="十卸载">十、卸载</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm uninstall -g @anthropic-ai/claude-code</span><br></pre></td></tr></table></figure>
+<p>如需清除配置文件：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Remove-Item</span> <span class="literal">-Recurse</span> <span class="literal">-Force</span> <span class="string">&quot;<span class="variable">$env:USERPROFILE</span>\.claude&quot;</span></span><br></pre></td></tr></table></figure>
+<hr />
+<h2 id="参考链接">参考链接</h2>
+<ul>
+<li>官方文档：https://docs.anthropic.com/claude-code</li>
+<li>API Key 申请：https://console.anthropic.com</li>
+<li>GitHub Issues：https://github.com/anthropics/claude-code/issues</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/AI-agent/" rel="tag"># AI agent</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2026/03/30/%E5%A6%82%E4%BD%95%E5%88%A9%E7%94%A8AI%E5%8A%A9%E6%89%8B%E9%99%8D%E9%87%8D/" rel="prev" title="如何利用AI助手降AI率">
+      <i class="fa fa-chevron-left"></i> 如何利用AI助手降AI率
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E7%BD%AE%E8%A6%81%E6%B1%82"><span class="nav-number">1.</span> <span class="nav-text">前置要求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E5%AE%89%E8%A3%85-node.js"><span class="nav-number">2.</span> <span class="nav-text">一、安装 Node.js</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E5%AE%89%E8%A3%85-claude-code"><span class="nav-number">3.</span> <span class="nav-text">二、安装 Claude Code</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E9%85%8D%E7%BD%AE-api-key"><span class="nav-number">4.</span> <span class="nav-text">三、配置 API Key</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B9%E5%BC%8F%E4%B8%80%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E6%8E%A8%E8%8D%90"><span class="nav-number">4.1.</span> <span class="nav-text">方式一：环境变量（推荐）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B9%E5%BC%8F%E4%BA%8C%E7%99%BB%E5%BD%95%E5%91%BD%E4%BB%A4"><span class="nav-number">4.2.</span> <span class="nav-text">方式二：登录命令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E9%A6%96%E6%AC%A1%E8%BF%90%E8%A1%8C"><span class="nav-number">5.</span> <span class="nav-text">四、首次运行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%94%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="nav-number">6.</span> <span class="nav-text">五、常用命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%AD%E4%BD%BF%E7%94%A8-cc-switch-%E7%AE%A1%E7%90%86%E9%85%8D%E7%BD%AE"><span class="nav-number">7.</span> <span class="nav-text">六、使用 cc-switch 管理配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85"><span class="nav-number">7.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BB%E8%A6%81%E5%8A%9F%E8%83%BD"><span class="nav-number">7.2.</span> <span class="nav-text">主要功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%E6%B5%81%E7%A8%8B"><span class="nav-number">7.3.</span> <span class="nav-text">基本使用流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%81%A2%E5%A4%8D%E5%AE%98%E6%96%B9%E7%99%BB%E5%BD%95"><span class="nav-number">7.4.</span> <span class="nav-text">恢复官方登录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#windows-%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="nav-number">7.5.</span> <span class="nav-text">Windows 注意事项</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%83ide-%E9%9B%86%E6%88%90"><span class="nav-number">8.</span> <span class="nav-text">七、IDE 集成</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#vs-code"><span class="nav-number">8.1.</span> <span class="nav-text">VS Code</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%88%E7%AB%AF%E6%8E%A8%E8%8D%90"><span class="nav-number">8.2.</span> <span class="nav-text">终端推荐</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%AB%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-number">9.</span> <span class="nav-text">八、配置文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B9%9D%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98"><span class="nav-number">10.</span> <span class="nav-text">九、常见问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#q-%E6%8F%90%E7%A4%BA-claude-%E5%91%BD%E4%BB%A4%E4%B8%8D%E5%AD%98%E5%9C%A8"><span class="nav-number">10.1.</span> <span class="nav-text">Q: 提示 claude
+命令不存在？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#q-api-key-%E6%97%A0%E6%95%88"><span class="nav-number">10.2.</span> <span class="nav-text">Q: API Key 无效？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#q-%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81"><span class="nav-number">10.3.</span> <span class="nav-text">Q: 中文乱码？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#q-%E7%BD%91%E7%BB%9C%E8%BF%9E%E6%8E%A5%E9%97%AE%E9%A2%98"><span class="nav-number">10.4.</span> <span class="nav-text">Q: 网络连接问题？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%81%E5%8D%B8%E8%BD%BD"><span class="nav-number">11.</span> <span class="nav-text">十、卸载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5"><span class="nav-number">12.</span> <span class="nav-text">参考链接</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Lijx"
+      src="/images/Avatar.jpg">
+  <p class="site-author-name" itemprop="name">Lijx</p>
+  <div class="site-description" itemprop="description">Per aspra ad astra</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">28</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/081102Lijx" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;081102Lijx" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:lijx1020@foxmail.com" title="E-Mail → mailto:lijx1020@foxmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2024 – 
+  <span itemprop="copyrightYear">2026</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Lijx</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : true,
+      appId      : 'OJKhfP1f8CNBhyQe8d5L5ilg-gzGzoHsz',
+      appKey     : 'pG8XeLIW6IjHW71befT4wb24',
+      placeholder: "Just go go",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : 'zh-cn' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : true,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>

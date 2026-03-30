@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.1.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/bitbug_favicon_middle.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/bitbug_favicon_small.ico">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
+  </script>
+
+  <meta name="description" content="本教程基于实际降重经验整理，从60%降至20%以下。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何利用AI助手降AI率">
+<meta property="og:url" content="http://example.com/2026/03/30/%E5%A6%82%E4%BD%95%E5%88%A9%E7%94%A8AI%E5%8A%A9%E6%89%8B%E9%99%8D%E9%87%8D/index.html">
+<meta property="og:site_name" content="Xu an&#39;s Web">
+<meta property="og:description" content="本教程基于实际降重经验整理，从60%降至20%以下。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2026-03-30T00:18:26.000Z">
+<meta property="article:modified_time" content="2026-03-30T00:19:47.657Z">
+<meta property="article:author" content="Lijx">
+<meta property="article:tag" content="paper">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/2026/03/30/%E5%A6%82%E4%BD%95%E5%88%A9%E7%94%A8AI%E5%8A%A9%E6%89%8B%E9%99%8D%E9%87%8D/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>如何利用AI助手降AI率 | Xu an's Web</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Xu an's Web</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+  <a href="https://github.com/081102Lijx" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2026/03/30/%E5%A6%82%E4%BD%95%E5%88%A9%E7%94%A8AI%E5%8A%A9%E6%89%8B%E9%99%8D%E9%87%8D/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/Avatar.jpg">
+      <meta itemprop="name" content="Lijx">
+      <meta itemprop="description" content="Per aspra ad astra">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Xu an's Web">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          如何利用AI助手降AI率
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2026-03-30 08:18:26 / 修改时间：08:19:47" itemprop="dateCreated datePublished" datetime="2026-03-30T08:18:26+08:00">2026-03-30</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Research/" itemprop="url" rel="index"><span itemprop="name">Research</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2026/03/30/%E5%A6%82%E4%BD%95%E5%88%A9%E7%94%A8AI%E5%8A%A9%E6%89%8B%E9%99%8D%E9%87%8D/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2026/03/30/%E5%A6%82%E4%BD%95%E5%88%A9%E7%94%A8AI%E5%8A%A9%E6%89%8B%E9%99%8D%E9%87%8D/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+            <div class="post-description">本教程基于实际降重经验整理，从60%降至20%以下。</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="核心原则">核心原则</h2>
+<p><strong>不要让AI直接改写你的文章。</strong></p>
+<p>如果你把句子发给AI，让它给你一个"改好的版本"，然后直接粘贴进去——AI检测率不会下降，甚至可能更高。因为改出来的还是AI写的。</p>
+<p><strong>正确的流程是：</strong></p>
+<ol type="1">
+<li>AI告诉你哪里有问题、为什么被标红</li>
+<li><strong>你</strong>用自己的话重新表达</li>
+<li>AI帮你检查拼写和语法，但保留你的句子结构</li>
+</ol>
+<hr />
+<h2 id="第一步识别哪些句子会被标红">第一步：识别哪些句子会被标红</h2>
+<p>以下几类句子是AI检测器的重点目标：</p>
+<h3 id="总结收尾句最高频">1. 总结收尾句（最高频）</h3>
+<p>这类句子对内容没有任何实际贡献，纯粹是AI在"画句号"：</p>
+<ul>
+<li><code>This approach ensures population diversity and leads to improved optimization outcomes.</code></li>
+<li><code>These findings validate the adaptability and superiority of the strategy.</code></li>
+<li><code>This finding is vital, as it shifts the operational paradigm from...</code></li>
+<li><code>providing a valuable reference for regions with similar characteristics.</code></li>
+</ul>
+<p><strong>处理方式：直接删除。</strong>
+删掉之后前后文完全连贯，读者不会察觉。</p>
+<hr />
+<h3 id="空洞的意义声明">2. 空洞的意义声明</h3>
+<p>没有数据支撑、只是在"升华"的句子：</p>
+<ul>
+<li><code>significantly enhances adaptability to high renewable penetration</code></li>
+<li><code>supports the technical viability of the global energy transition</code></li>
+<li><code>promotes regional energy structure optimization and sustainable socioeconomic development</code></li>
+</ul>
+<p><strong>处理方式：</strong>
+要么删除，要么换成你自己对这个发现的具体判断（用数据说话）。</p>
+<hr />
+<h3 id="被动句堆叠">3. 被动句堆叠</h3>
+<p>每句都是 <code>X is done, yielding/establishing/utilizing Y</code>
+的结构，节奏太均匀：</p>
+<ul>
+<li><code>A discretization step of 1% is applied, yielding 36 combinations.</code></li>
+<li><code>A dynamic mapping mechanism is then established between...</code></li>
+<li><code>a fixed control scheme is utilized as a baseline</code></li>
+</ul>
+<p><strong>处理方式：改成主动句。</strong></p>
+<ul>
+<li><code>we applied a step size of 1%, obtaining 36 combinations</code></li>
+<li><code>we then established a dynamic mapping mechanism</code></li>
+<li><code>we used a fixed control scheme as a baseline</code></li>
+</ul>
+<hr />
+<h3 id="ai惯用词汇">4. AI惯用词汇</h3>
+<p>这些词本身不算错，但组合出现会触发检测：</p>
+<table>
+<thead>
+<tr>
+<th>被标红的表达</th>
+<th>替换方向</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>unlocks the latent potential</code></td>
+<td><code>makes better use of</code></td>
+</tr>
+<tr>
+<td><code>transferable methodological blueprint</code></td>
+<td><code>generalizable approach</code></td>
+</tr>
+<tr>
+<td><code>synergistic optimization</code></td>
+<td><code>improvement in both</code></td>
+</tr>
+<tr>
+<td><code>pivotal / vital / critical</code></td>
+<td>直接删掉形容词</td>
+</tr>
+<tr>
+<td><code>elucidate</code></td>
+<td><code>identify / show</code></td>
+</tr>
+<tr>
+<td><code>underscored by</code></td>
+<td><code>supported by</code></td>
+</tr>
+<tr>
+<td><code>navigate conflicting objectives</code></td>
+<td><code>balance between</code></td>
+</tr>
+<tr>
+<td><code>exhibits a monotonic increase</code></td>
+<td><code>increases monotonically</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="预告性过渡句">5. 预告性过渡句</h3>
+<p>AI喜欢在段落之间加"接下来我要做什么"的句子，读者不需要被提醒：</p>
+<ul>
+<li><code>This section analyzes the resulting schemes... to demonstrate improvements in...</code></li>
+<li><code>The subsequent analysis investigates these differences to elucidate their impact on...</code></li>
+<li><code>These parameters provide the foundational data for the subsequent functional analysis.</code></li>
+</ul>
+<p><strong>处理方式：直接删除。</strong> 读者会自己读下去。</p>
+<hr />
+<h2 id="第二步改写的正确方式">第二步：改写的正确方式</h2>
+<p><strong>先用中文说大意，再翻译成英文。</strong></p>
+<p>例如，面对一段被标红的算法描述：</p>
+<ol type="1">
+<li>先问自己：这段在说什么？（用中文回答）</li>
+<li>用中文写出逻辑框架（4-5个要点）</li>
+<li>把这个框架翻译成英文</li>
+<li>让AI检查拼写和语法，但<strong>不要</strong>让AI"润色"或"改得更学术"</li>
+</ol>
+<p>你自己写出来的句子，哪怕措辞朴素，检测率也远低于AI改写的版本。</p>
+<hr />
+<h2 id="第三步什么不需要改">第三步：什么不需要改</h2>
+<p>以下内容AI检测器几乎不会标，<strong>保留原样</strong>：</p>
+<ul>
+<li><strong>含具体数字的句子</strong>：<code>147% increase</code>、<code>USD 110.52×10³</code>、<code>5%–9%</code></li>
+<li><strong>含文献引用的句子</strong>：<code>Pan et al. [9] developed...</code>（即使描述相似，有引用就不是AI原创）</li>
+<li><strong>工程参数描述</strong>：具体的水位、库容、装机容量等</li>
+</ul>
+<hr />
+<h2 id="第四步最后检查清单">第四步：最后检查清单</h2>
+<p>改完后逐段自查：</p>
+<ul class="task-list">
+<li><label><input
+type="checkbox" />有没有"三件套"结尾：<code>simultaneously achieving X, Y, and Z</code>？</label></li>
+<li><label><input type="checkbox" />有没有"global energy
+transition"、"sustainable development"这类升华词？</label></li>
+<li><label><input
+type="checkbox" />有没有连续三句以上的被动句？</label></li>
+<li><label><input type="checkbox" />有没有"In
+conclusion"开头的段落在Discussion里（而不是Conclusion章节）？</label></li>
+<li><label><input
+type="checkbox" />有没有重复说"接下来要做什么"的过渡句？</label></li>
+</ul>
+<p>每有一个"是"，删掉或改掉对应内容。</p>
+<hr />
+<h2 id="效果参考">效果参考</h2>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>AI率</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>初稿（AI辅助写作）</td>
+<td>~60%</td>
+</tr>
+<tr>
+<td>按本方法逐段修改后</td>
+<td>&lt;20%</td>
+</tr>
+</tbody>
+</table>
+<p><strong>关键是改写由自己完成，AI只负责分析问题和检查语法。</strong></p>
+<hr />
+<p><em>整理自实际降重对话记录，2026年3月</em></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/paper/" rel="tag"># paper</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2025/12/09/Word-%E5%85%AC%E5%BC%8F%E4%B9%B1%E7%A0%81%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" rel="prev" title="Word公式乱码解决方案">
+      <i class="fa fa-chevron-left"></i> Word公式乱码解决方案
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2026/03/30/Claud-code-windows-%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8D%97/" rel="next" title="Claud code windows 配置指南">
+      Claud code windows 配置指南 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%B8%E5%BF%83%E5%8E%9F%E5%88%99"><span class="nav-number">1.</span> <span class="nav-text">核心原则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E6%AD%A5%E8%AF%86%E5%88%AB%E5%93%AA%E4%BA%9B%E5%8F%A5%E5%AD%90%E4%BC%9A%E8%A2%AB%E6%A0%87%E7%BA%A2"><span class="nav-number">2.</span> <span class="nav-text">第一步：识别哪些句子会被标红</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%BB%E7%BB%93%E6%94%B6%E5%B0%BE%E5%8F%A5%E6%9C%80%E9%AB%98%E9%A2%91"><span class="nav-number">2.1.</span> <span class="nav-text">1. 总结收尾句（最高频）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A9%BA%E6%B4%9E%E7%9A%84%E6%84%8F%E4%B9%89%E5%A3%B0%E6%98%8E"><span class="nav-number">2.2.</span> <span class="nav-text">2. 空洞的意义声明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A2%AB%E5%8A%A8%E5%8F%A5%E5%A0%86%E5%8F%A0"><span class="nav-number">2.3.</span> <span class="nav-text">3. 被动句堆叠</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ai%E6%83%AF%E7%94%A8%E8%AF%8D%E6%B1%87"><span class="nav-number">2.4.</span> <span class="nav-text">4. AI惯用词汇</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%84%E5%91%8A%E6%80%A7%E8%BF%87%E6%B8%A1%E5%8F%A5"><span class="nav-number">2.5.</span> <span class="nav-text">5. 预告性过渡句</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E6%AD%A5%E6%94%B9%E5%86%99%E7%9A%84%E6%AD%A3%E7%A1%AE%E6%96%B9%E5%BC%8F"><span class="nav-number">3.</span> <span class="nav-text">第二步：改写的正确方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%B8%89%E6%AD%A5%E4%BB%80%E4%B9%88%E4%B8%8D%E9%9C%80%E8%A6%81%E6%94%B9"><span class="nav-number">4.</span> <span class="nav-text">第三步：什么不需要改</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E5%9B%9B%E6%AD%A5%E6%9C%80%E5%90%8E%E6%A3%80%E6%9F%A5%E6%B8%85%E5%8D%95"><span class="nav-number">5.</span> <span class="nav-text">第四步：最后检查清单</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%88%E6%9E%9C%E5%8F%82%E8%80%83"><span class="nav-number">6.</span> <span class="nav-text">效果参考</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Lijx"
+      src="/images/Avatar.jpg">
+  <p class="site-author-name" itemprop="name">Lijx</p>
+  <div class="site-description" itemprop="description">Per aspra ad astra</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">28</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/081102Lijx" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;081102Lijx" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:lijx1020@foxmail.com" title="E-Mail → mailto:lijx1020@foxmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2024 – 
+  <span itemprop="copyrightYear">2026</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Lijx</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : true,
+      appId      : 'OJKhfP1f8CNBhyQe8d5L5ilg-gzGzoHsz',
+      appKey     : 'pG8XeLIW6IjHW71befT4wb24',
+      placeholder: "Just go go",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : 'zh-cn' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : true,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>
